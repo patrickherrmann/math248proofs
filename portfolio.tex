@@ -1,0 +1,2273 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+
+\newcommand{\entry}[3]
+{
+   \noindent\textbf{#1.}
+   \emph{#2}
+   \bigskip
+
+   \noindent#3
+   \bigskip
+   \hrule
+   \vspace{24pt}
+}
+
+\newcommand{\biguni}[1]
+{
+\displaystyle\bigcup_{#1}
+}
+
+\newcommand{\bigint}[1]
+{
+\displaystyle\bigcap_{#1}
+}
+
+\newcommand{\powerset}{\mathscr{P}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\scripta}{\mathscr{A}}
+
+\newcommand{\sig}{$\boxtimes$}
+
+\begin{document}
+
+\title{Math 248 Portfolio}
+\author{Patrick W. Herrmann}
+\maketitle
+
+
+\entry{Proposition 1.6}
+{There exists a stable list of five length-4 words.}
+{\underline{Proof:} The list $\{ make, male, tale, talk, walk \}$ fits the criteria because it consists of five words, each of which has length-4 and a difference of one with adjacent words. \sig}
+
+
+
+\entry{Proposition 1.7}
+{Every stable list of length-2 words has fewer than $1000$ words.}
+{\underline{Proof:} Because words must be distinct, every stable list of length-2 words must be of length less than or equal to the number of two letter words. The number of length-2 words is a subset of the number of length-2 letter combinations. Therefore, every stable list of length-2 words cannot possibly be longer than $26^2$, or 676. Because 676 is fewer than 1000, the proposition holds. \sig}
+
+
+\entry{Proposition 1.8}
+{If $W$ and $V$ are on the same stable list, then $d(W, V) < l(W)$.}
+{\underline{Disproof:} The list $\{ the, tee, bee, bed \}$ is stable. Let $W$~=~``the'' and $V$~=~``bed''. $d(W, V)$~=~3, and $l(W)$~=~3. Because 3 is not less than 3, the proposition is false. \sig}
+
+
+
+\entry{Proposition 1.10}
+{There exists a fourth word $W$ beginning with an ``h'' such that the list $\{ sit, hut, sum, W \}$ is tight.}
+{\underline{Proof:} Let $W$~=~``him''. $W$ begins with ``h'' and the list is tight. \sig}
+
+
+
+\entry{Proposition 1.11}
+{If the list $\{ sit, hut, sum, W \}$ is tight and $W$ begins neither with ``s'' nor ``h'', then the last letter of $W$ is a ``t''.}
+{\underline{Proof:} Let the second letter of $W$ be any letter but ``u''. In this case, the first letter of W will not match any of the other words because it is assumed to be neither ``s'' nor ``h''. The second letter will match at most one of the other words (second letter ``i'' will match ``sit''), leaving ``hut'' and ``sum'' unmatched. In order for the list to be tight, the last letter must be both ``t'' and ``m'', which is impossible. Because the second letter of $W$ cannot be any letter besides ``u'', the second letter must be ``u''. Now the ``u'' matches both ``hut'' and ``sum''. ``sit'' is left unmatched, so the last letter must be ``t'' for the list to be tight. \sig}
+
+
+
+\entry{Proposition 1.12}
+{There exist tight stable lists of length-3 words.}{\underline
+{Proof:} The list $\{ two, too, ton,  tan \}$ is a tight stable list of length-3 words.}
+
+
+
+\entry{Proposition 1.13}
+{All tight lists are stable.}
+{\underline{Disproof:} The list $\{ sit, hut, sum, him \}$ is tight but not stable. \sig}
+
+
+
+\entry{Proposition 1.14}
+{All stable lists are tight.}
+{\underline{Disproof:} The list $\{ not, nor, for, fir \}$ is stable, but not tight. \sig}
+
+
+
+\entry{Proposition 1.21}
+{
+Consider the following propositions:
+\begin{itemize}
+\item
+P: ``All stable lists of words are tight.''
+\item
+Q: ``Cal Poly is on semesters''
+\item
+R: ```Elvis lives' is a proposition.''
+\end{itemize}
+and determine whether each of the following compound propositions is true or false, thoroughly justifying your answers.
+}
+{
+\begin{description}
+\item[$P~\lor~R$:]
+Proposition $R$ is always true because ``Elvis lives'' is, true or false, a proposition. Since the expression becomes true if at least one of the propositions is true, the expression is always \textbf{true}. \sig
+\item[$\sim(Q~\land~R)$:]
+Proposition $Q$ is false because Cal Poly is on the quarter system. False AND anything is false, so the negation of $(Q~\land~R)$ becomes \textbf{true}. \sig
+\item[$(\sim Q~\land~P)~\lor~(\sim P~\land~R)$:]
+Substituting each proposition for its truth value yields this:
+\[ (\sim F~\land~F)~\lor~(\sim F~\land~T) \]
+Remove the negations:
+\[ (T~\land~F)~\lor~(T~\land~T) \]
+Evaluate the ands:
+\[ F~\lor~T \]
+And we're left with \textbf{true}. \sig
+\end{description}
+}
+
+
+
+\entry{Exercise 1.23}
+{Construct a truth table for the propositional form $(\sim P )∨(\sim Q)$. Is there any combination of truth values for the constituent propositions $P$ and $Q$ that yields different truth values for the propositional forms $\sim(P~\land~Q)$ and $(\sim P)~\lor~(\sim Q)$?}
+{
+\begin{quote}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$P$ & $Q$ & $\sim P~\lor~\sim Q$ & $\sim(P \land Q)$\\
+\hline
+$T$ & $T$ & $F$ & $F$ \\
+\hline
+$T$ & $F$ & $T$ & $F$ \\
+\hline
+$F$ & $T$ & $T$ & $T$ \\
+\hline
+$F$ & $F$ & $T$ & $T$ \\
+\hline
+\end{tabular}
+\end{quote}
+Each combination of P and Q yields the same results, and therefore the two expressions are logically equivalent. \sig
+}
+
+
+
+\entry{Exercise 1.24}
+{Create a definition for what it means for two propositional forms to be equivalent.}
+{Two expressions are logically equivalent if every combination of truth values lead to the same result for the propositions the expressions depend upon. \sig}
+
+
+
+
+\entry{Exercise 1.25}
+{Construct a truth table for the propositional form $(\sim P )∨(\sim Q)$. Is there any combination of truth values for the constituent propositions $P$ and $Q$ that yields different truth values for the propositional forms $\sim(P~\land~Q)$ and $(\sim P)~\lor~(\sim Q)$?}
+{
+\begin{quote}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$P$ & $Q$ & $\sim(P~\lor~Q)$ & $\sim P~\land~\sim Q)$\\
+\hline
+$T$ & $T$ & $F$ & $F$ \\
+\hline
+$T$ & $F$ & $F$ & $F$ \\
+\hline
+$F$ & $T$ & $F$ & $F$ \\
+\hline
+$F$ & $F$ & $T$ & $T$ \\
+\hline
+\end{tabular}
+\end{quote}
+Each combination of P and Q yields the same results, and therefore the two expressions are logically equivalent. \sig
+}
+
+
+
+\entry{Exercise 1.27}
+{Write a denial of the proposition ``Cal Poly is on semesters.''}
+{``Cal Poly is not on semesters.'' \sig}
+
+
+
+\entry{Exercise 1.28}
+{Write a denial of the proposition ``The function f (x) is unbounded or constant.''}
+{``The function f(x) is not unbounded and isn't constant.'' \sig}
+
+
+
+\entry{Exercise 1.31}
+{Determine a propositional form involving some of $P$ , $Q$, $\land$, $\lor$ and $\sim$ that is logically equivalent to $P \implies Q$ and justify your assertion with truth tables.}
+{
+Propositional form: $\sim P \lor Q$
+\begin{quote}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$P$ & $Q$ & $P \implies Q$ & $\sim P \lor Q$\\
+\hline
+$T$ & $T$ & $T$ & $T$ \\
+\hline
+$T$ & $F$ & $F$ & $F$ \\
+\hline
+$F$ & $T$ & $T$ & $T$ \\
+\hline
+$F$ & $F$ & $T$ & $T$ \\
+\hline
+\end{tabular}
+\end{quote}
+Because the truth tables for $P \implies Q$ and  $\sim P~\lor~Q$ came out the same, the expressions are logically equivalent. Thus implications can be substituted for ors when convenient. \sig
+}
+
+
+
+\entry{Exercise 1.33}
+{Write a true conditional sentence where the consequent is false.}
+{``If triangles have four sides, then I am six feet tall.'' \sig}
+
+
+
+\entry{Exercise 1.34}
+{Write a true conditional sentence where the consequent is true.}
+{``If the sky is blue, one plus one equals two.'' \sig}
+
+
+
+\entry{Exercise 1.35}
+{Write a true conditional sentence where the antecedent is false.}
+{``If  ten squared is ninety-nine, my life is awesome.'' \sig}
+
+
+
+\entry{Exercise 1.36}
+{
+Determine the truth value for each of the following conditional sentences.
+\begin{enumerate}[(a)]
+\item
+``If Euclid was a Leo, then squares have four sides.''
+\item
+``If $5 < 2$, then $10 < 7$.''
+\item
+``If $\sin(\frac{\pi}{2}) = 1$, then Betsy Ross was the first president of the United States.''
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$* \implies T = T$ \sig
+\item
+$F \implies * = T$ \sig
+\item
+$T \implies F = F$ \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 1.39}
+{Determine which of the converse and/or contrapositive is logically 
+equivalent to the conditional sentence $P \implies Q$ and justify your conclusions with truth tables.}
+{
+Propositional form: $\sim P \lor Q$
+\begin{quote}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$P$ & $Q$ & $P \implies Q$ & $Q \implies P$ & $\sim Q \implies \sim P$ \\
+\hline
+$T$ & $T$ & $T$ & $T$ & $T$ \\
+\hline
+$T$ & $F$ & $F$ & $T$ & $F$ \\
+\hline
+$F$ & $T$ & $T$ & $F$ & $T$ \\
+\hline
+$F$ & $F$ & $T$ & $T$ & $T$ \\
+\hline
+\end{tabular}
+\end{quote}
+Thus an implication and it's contrapositive are logically equivalent, however the converse is not, as illustrated by the above truth table. \sig
+}
+
+
+
+\entry{Exercise 1.40}
+{Write the converse and contrapositive of the conditional sentence ``If $f$ is an even function, then $f(2) = f(-2)$.''}
+{
+\begin{description}
+\item[Converse:]
+``If $f(2) = f(-2)$, then $f$ is an even function.'' \sig
+\item[Contraposative:]
+``If $f(2) \ne f(-2)$, then $f$ is not an even function.'' \sig
+\end{description}
+}
+
+
+
+\entry{Exercise 1.42}
+{Use truth tables to show that $P \iff Q$ is logically equivalent to $(P \implies Q) \land (Q \implies P)$.}
+{
+Propositional form: $\sim P \lor Q$
+\begin{quote}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$P$ & $Q$ & $P \iff Q$ & $(P \implies Q) \land (Q \implies P)$ \\
+\hline
+$T$ & $T$ & $T$ & $T$ \\
+\hline
+$T$ & $F$ & $F$ & $F$ \\
+\hline
+$F$ & $T$ & $F$ & $F$ \\
+\hline
+$F$ & $F$ & $T$ & $T$ \\
+\hline
+\end{tabular}
+\end{quote}
+Because the truth tables for  $P \iff Q$ and $(P \implies Q) \land (Q \implies P)$ come out the same, they are logically equivalent. Thus, a biconditional can be proved by proving two converse conditionals. \sig
+}
+
+
+
+\entry{Exercise 1.43}
+{
+Determine the truth value for each of the following biconditional sentences.
+\begin{enumerate}[(a)]
+\item
+``The moon is made of cheese if and only if the earth is flat''
+\item
+``$1 + 1 = 2$ if and only if $\cos(\pi) = 1$.''
+\item
+```If $5 < 2$, then $10 < 7$' if and only if `Elvis lives' is a proposition.''
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$F$ \sig
+\item
+$T$ \sig
+\item
+$T$ \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 1.46}
+{Write an open sentence in the universe of real numbers that is true 
+for every member of the universe.}
+{$x * 1 = x$ \sig}
+
+
+
+\entry{Exercise 1.47}
+{Write an open sentence in the universe of cats that is true for no member of the universe.}
+{``x is not a cat.'' \sig}
+
+
+
+\entry{Exercise 1.48}
+{Write an open sentence in the universe of vegetables that is true for at least one but not every member of the universe.}
+{``x is a carrot.'' \sig}
+
+
+
+\entry{Exercise 1.51}
+{
+Let the universe be the real numbers $\reals$. Determine the truth value for each proposition. 
+\begin{enumerate}[(a)]
+\item
+$(\forall x)(x^2 + 1 \ge 0)$
+\item
+$(\exists x)(|x| > 0)$
+\item
+$(\forall x)(|x| > 0)$
+\item
+$(\exists x)(2x + 3 = 6x + 7)$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item $T$ \sig
+\item $T$ \sig
+\item $F$, $x = 0$ \sig
+\item $T$ \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 1.52}
+{Name a universe in which $(\exists x)(2x + 3 = 6x + 7)$ is false.}
+{$\reals^+$, because $x = -1$ is the only real solution. By limiting the universe to positive real numbers there exists no solution and the statement is false. \sig}
+
+
+
+\entry{Exercise 1.53}
+{Name a universe in which $(\exists x)(x^2 + 1 = 0)$ is true.}
+{The set of all complex numbers. $i$ is a solution, so including complex numbers guarantees a solution. \sig}
+
+
+
+\entry{Exercise 1.54}
+{Let $P(x)$ be an open sentence in some universe. Determine whether the proposition \[ [\sim(\forall x)P(x)] \iff [(\exists x)(\sim P(x))] \] is true or false and justify your conclusion.}
+{The left side of the biconditional statement reads as follows: ``$P(x)$ is not true for every $x$.'' The right side says that ``There exists at least one $x$ such that $P(x)$ is not true''. The preceding english statements are equivalent. Since the left and right sides are equivalent, the statement is either $T \iff T$ or $F \iff F$, both of which are true. Therefore the statement is unconditionally true. \sig}
+
+
+
+\entry{Exercise 1.55}
+{Let $P(x)$ be an open sentence in some universe. Determine whether the proposition \[ [\sim(\exists x)P(x)] \iff [(\forall x)(\sim P(x))] \] is true or false and justify your conclusion.}
+{The left side of the biconditional statement reads as follows: ``There does not exist a single $x$ such that $P(x)$ is true.'' The right side says that ``For every single $x$, $P(x)$ is not true''. The preceding english statements are equivalent, making the biconditional true. \sig}
+
+
+
+\entry{Exercise 1.56}
+{Write a denial of the proposition ``All even numbers are divisible by four.''}
+{``Not all even numbers are divisible by four.'' \sig}
+
+
+
+\entry{Exercise 1.57}
+{Write a denial of the proposition ``Some intelligent people revile mathematicians.''}
+{``No intelligent people revile mathematicians.'' \sig}
+
+
+
+\entry{Exercise 1.58}
+{Let the natural numbers $
+aturals = \{1, 2, 3, \ldots\}$ be the universe. Translate the proposition \[ (\forall x)([(x \mbox{ is prime })~\land~(x \ne 2)] \implies [(\exists j)(x = 2j + 1)]) \] into English.}
+{Every prime number except 2 is odd. \sig}
+
+
+
+\entry{Exercise 1.59}
+{
+Let the universe be the real numbers $\reals$. Determine the truth value for each proposition.
+\begin{enumerate}[(a)]
+\item
+$(\forall x)(\exists y)(x < y)$
+\item
+$(\exists y)(\forall x)(x < y)$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$T$ \sig
+\item
+$F$ \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 1.60}
+{
+Let the universe be the real numbers $\reals$. Write the negation of each proposition.
+\begin{enumerate}[(a)]
+\item
+$(\forall x)(\exists y)(x < y)$
+\item
+$(\exists y)(\forall x)(x < y)$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$(\exists x)(\forall y)(x \ge y)$ \sig
+\item
+$(\forall y)(\exists x)(x \ge y)$ \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 1.62}
+{
+Let the universe be the real numbers $\reals$. Determine the truth value for each proposition.
+\begin{enumerate}[(a)]
+\item
+$(\exists !x)(x \ge 0 \land x \le 0)$
+\item
+$(\exists !x)(x > 5)$
+\item
+$(\exists !x)(x^2 = -2)$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$T$, $x = 0$. \sig
+\item
+$F$, $x = 6, x = 7$. \sig
+\item
+$F$, $\sqrt{-2} \not\in \reals$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 1.63}
+{Let $P(x)$ be an open sentence in some universe. Is the quantified proposition \[ \sim(\forall x)(\forall y)[(P(x) \land P(y)) \implies x = y] \] a denial of $(\exists !x)(P(x))$?}
+{Not quite. Consider the universe of all real numbers. Let $P(x)$ be ``$x \not\in \reals$'' $(\exists !x)(P(x))$ is false because $P(x)$ is false for every $x$. $\sim(\forall x)(\forall y)[(P(x) \land P(y)) \implies x = y]$  is also false because the antecedent of the implication is false, making the implication true, which negated is false. Thus the two expressions yield equivalent truth values and are not denials. \sig}
+
+
+
+\entry{Theorem 2.4}
+{Let $a$, $b$ and $c$ be integers. If $a$ divides $b$, then $a$ divides $bc$.}
+{
+\underline{Proof:} Suppose $a$ divides $b$. Then $\exists~k$ such that $ak = b$. So $akc = bc$. Since $kc$ is some integer, $a$ divides $bc$. \sig
+}
+
+
+
+\entry{Theorem 2.5}
+{Let $a$, $b$ and $c$ be integers. If $a$ divides $b$ and $a$ divides $b + c$, then $a$ divides $3c$.}
+{
+\underline{Proof:} Suppose $a$ divides $b$ and $a$ divides $b + c$. Then $\exists~k_1 : ak_1 = b$ and $\exists~k_2 : ak_2 = b + c$. By substitution, $ak_2 = ak_1 + c$. Simplifying: \[ ak_2 - ak_1 = c \] \[ a(k_2 - k_1) = c \] \[ a * 3(k_2 - k_1) = 3c \]
+Since $3(k_2 - k_1)$ is some integer, $a$ divides $3c$. \sig
+}
+
+
+
+\entry{Exercise 2.6}
+{Create a definition for what it means for an integer to be even.}
+{An integer a is even if and only if there exists some integer $k$ such that $a = 2k$. \sig}
+
+
+
+\entry{Exercise 2.7}
+{Create a definition for what it means for an integer to be odd.}
+{An integer a is even if and only if there exists some integer $k$ such that $a = 2k + 1$. \sig}
+
+
+
+\entry{Theorem 2.8}
+{If $x$ and $y$ are even integers, then $x + y$ is an even integer.}
+{
+\underline{Proof:} Suppose $x$ and $y$ are even integers. Thus $\exists~k_1 : 2k_1 = x$ and $\exists~k_2 : 2k_2 = y$. Adding these equations yields $2k_1 + 2k_2 = x + y$, or $2(k_1 + k_2) = x + y$. Since $k_1 + k_2$ is some integer, $x + y$ is even. \sig
+}
+
+
+
+\entry{Theorem 2.9}
+{If $x$ and $y$ are odd integers, then $x + y$ is an even integer.}
+{
+\underline{Proof:} Suppose $x$ and $y$ are odd. Thus $\exists~k_1 : 2k_1 + 1 = x$ and $\exists~k_2 : 2k_2 + 1 = y$. Adding these equations yields $2k_1 + 2k_2 + 1 = x + y$, or $2(k_1 + k_2 + 1) = x + y$. Since $k_1 + k_2 + 1$ is some integer, $x + y$ is even. \sig
+}
+
+
+
+\entry{Theorem 2.10}
+{If $x$ and $y$ are even integers, then $4$ divides $xy$.}
+{
+\underline{Proof:} Suppose $x$ and $y$ are even. Thus $\exists~k_1 : 2k_1 = x$ and $\exists~k_2 : 2k_2 = y$. Thus $xy = 4k_{1}k_2$. Since $k_{1}k_2$ is some integer, $4$ divides $xy$.
+}
+
+
+
+\entry{Theorem 2.11}
+{If $x$ is an integer, then $x_2 + x + 3$ is an odd integer.}
+{
+\underline{Proof:} Let $x$ be some integer. $x$ can either be even or odd. Consider each case.
+\begin{enumerate}[(a)]
+\item
+Suppose $x$ is odd. Thus $\exists~k : 2k + 1 = x$. Substituting into $x^2 + x + 3$ yields $(2k + 1)^2 + 2k + 1 + 3$. This simplifies: \[ 4k^2 + 6k + 4 + 1 \] \[ 2(2k^2 + 3k + 2) + 1 \]
+Since $2k^2 + 3k + 2$ is some integer, the quantity is by definition odd.
+\item
+Suppose $x$ is even. thus $\exists~k : 2k = x$. Substituting into $x^2 + x + 3$ yields $4k^2 + 2k + 2 + 1$, which simplifies to $2(2k^2 + k + 1) + 1$. Since $k^2 + k + 1$ is some integer, the quantity is by definition odd.
+\end{enumerate}
+Since $x_2 + x + 3$ turns out odd for both even and odd $x$ values, it is always odd. \sig
+}
+
+
+
+\entry{Theorem 2.12}
+{The product of consecutive integers is an even integer.}
+{
+\underline{Proof:} Consider any odd integer minus three. It equals $2k + 1 - 3$ for some integer $k$. Simplifying to $2(k - 1)$, we can conclude that this quantity is even. 
+
+Now consider that $x^2 + x + 3$ is odd for any integer $x$, according to Theorem 2.11. Subtracting three, $x^2 + x$ must be even. Rewritten as $x(x + 1)$, it is apparent that this quantity represents the product of two consecutive integers. Thus the product of two consecutive integers is even. \sig
+}
+
+
+
+\entry{Theorem 2.13}
+{Let $x$ be an integer. If $4$ does not divide $x^2$ , then $x$ is odd.}
+{
+\underline{Proof by contraposition:} Suppose $x$ is even. Then $\exists~k : 2k = x$. Thus $x^2 = 4k^2$. Since $k^2$ is some integer, $4$ divides $x^2$. By contraposition, if $4$ does not divide $x^2$ , then $x$ is odd. \sig
+}
+
+
+
+\entry{Theorem 2.14}
+{Let $x$ be an integer. If $8$ does not divide $x^2 - 1$, then $x$ is even.}
+{
+\underline{Proof by contraposition:} Suppose $x$ is odd. Then $\exists~k : 2k + 1 = x$. Then $x^2 = 4k^2 + 4k + 1$. This simplifies to $x^2 - 1 = 4(k^2 + k)$. $k^2 + k$ is really $k(k + 1)$, the product of two consecutive integers. Since this is an even quantity according to Theorem 2.12, we can factor out a $2$. Thus $x^2 - 1 = 8($some integer$)$, so $8$ divides $x^2 - 1$. By contraposition, if $8$ does not divide $x^2 - 1$, then $x$ is even. \sig
+}
+
+
+
+\entry{Theorem 2.15}
+{Let $x$ and $y$ be integers. If $xy$ is even, then either $x$ is even or $y$ is even.}
+{
+\underline{Proof by contraposition:} Suppose $x$ is odd and $y$ is odd. Then $\exists~k_1 : 2k_1 + 1 = x$ and $\exists~k_2 : 2k_2 + 1 = y$. Thus $xy = 4k_{1}k_2 + 2k_1 + 2k_2 + 1$. So $xy = 2(2k_{1}k_2 + k_1 + k_2) + 1$. Since $2k_{1}k_2 + k_1 + k_2$ is some integer, $xy$ is odd. By contraposition, if $xy$ is even, then either $x$ is even or $y$ is even. \sig
+}
+
+
+\entry{Theorem 2.16}
+{Let $a$, $b$ and $c$ be positive integers. The integer $ac$ divides $bc$ if and only if the integer $a$ divides $b$.}
+{
+\underline{Proof:}
+\begin{enumerate}[(a)]
+\item
+Suppose $ac$ divides $bc$. Then $\exists~k : ack = bc$. By cancelling $c$ from each side, $ak = b$. So $a$ divides $b$.
+\item
+Suppose $a$ divides $b$. Then $\exists~k : ak = b$. By multiplying each side by $c$, $ack = bc$. So $ac$ divides $bc$.
+\end{enumerate}
+Since each side of the biconditional implies the other, the biconditional is true. \sig
+}
+
+
+
+\entry{Theorem 2.17}
+{Let $a$ and $b$ be positive integers. The integer $a + 1$ divides $b$ and the integer $b$ divides $b + 3$ if and only if $a = 2$ and $b = 3$.}
+{
+\underline{Proof:}
+\begin{enumerate}[(a)]
+\item
+Suppose $a = 2$ and $b = 3$. Then $a + 1 = 3$ and $b + 3 = 6$. So $a + 1$ divides $b$ and $b$ divides $b + 3$.
+\item
+Suppose $a + 1$ divides $b$ and $b$ divides $b + 3$. Then $\exists~k_1 : (a + 1)k_1 = b$ and $\exists~k_2 : bk_2 = b + 3$. So $bk_2 - b = 3$, so $b(k_2 - 1) = 3$ Thus $b$ divides $3$. Since $3$ only has two factors, $3$ and $1$, $b$ must equal $3$ or $1$. Consider each case.
+\begin{enumerate}[(i)]
+\item
+Let $b = 1$. Since $(a + 1)k_1 = b$, $(a + 1)k_1 = 1$. Since $1$ only has one factor, $1$, $a + 1 = 1$. So $a = 0$. This case is no good because $a$ was specified to be positive.
+\item
+Let $b = 3$. Since $(a + 1)k_1 = b$, $(a + 1)k_1 = 3$. Since $3$ only has two factors, $3$ and $1$, $a + 1$ must equal $3$ or $1$. Since $a$ is specified positive, $a + 1 \ne 1$, so $a + 1 = 3$. Thus $b = 3$ and $a = 2$.
+\end{enumerate}
+\end{enumerate}
+Since both sides of the biconditional imply the other, the biconditional is true. \sig
+}
+
+
+
+\entry{Theorem 2.18}
+{Let $x$ be a real number. The quadratic $x^2 + 2x + 1 = 0$ if and only if $x = -1.$}
+{
+\underline{Proof:} \[ x^2 + 2x + 1 = 0 \] \[ (x + 1)^2 = 0 \] \[ x = -1 \]
+Since $x^2 + 2x + 1 = 0 \equiv x = -1$ for $ x \in \reals$, one being true implies the other being true, so the biconditional is true. \sig
+}
+
+
+
+\entry{Theorem 2.19}
+{Determine what supposition would begin a proof of $P \implies Q$ by contradiction.}
+{
+\[ \sim(P \implies Q) \]
+\[ \sim (\sim P \lor Q) \]
+\[ P \land \sim Q \]
+Suppose $P \land \sim Q$. If this leads to a contradiction, then $P \implies Q$ is true. \sig
+}
+
+
+
+\entry{Theorem 2.21}
+{If $r$ is a real number and $r^2 = 2$, then $r$ is irrational.}
+{
+\underline{Proof by contradiction:} Suppose $r^2 = 2$ and $r$ is rational. Then $\exists~\frac{p}{q} = r$ where $p$ and $q$ are integers with a greatest common factor of $1$. Then $\frac{p^2}{q^2} = 2$, so $p^2 = 2q^2$. Therefore $p^2$ is even. By Theorem 2.15 we can conclude that $p$ is even. Thus $\exists~k : 2k = p$. By substitution, $r = \frac{2k}{q}$. So $r^2 = \frac{4k^2}{q^2} = 2$. After some rearrangement, $2k^2 = q^2$. Again by Theorem 2.15, $q$ must be even. Since $p$ and $q$ are both even, they must share a factor of two. This contradicts our original stipulation that $p$ and $q$ do not have any factors besides one. Because the negation of the implication leads to a contradiction, the implication must be true. \sig
+}
+
+
+
+\entry{Proposition 2.22}
+{At any Cal Poly football game there are at least two people in attendance with the same number of friends in attendance.}
+{
+\underline{Proof:} Let $n$ denote the number of people in attendence, and $f$ denote the number of friends each person has. Each person has at least $0$ friends at the game and at most $n - 1$ friends at the game (everybody but themself). Thus there are $n$ possible values for $f$ ($0$ through $n - 1$). However, if somebody were to have $n - 1$ friends, they would be friends with everybody, so nobody could have $0$ friends. Thus there are at most $n - 1$ possible values of $f$. Since there are $n$ people at the game but only $n - 1$ values for $f$, at least two people must share an $f$ value. Thus there are at least two people in attendance with the same number of friends in attendance. \sig
+}
+
+
+
+\entry{Proposition 2.23}
+{Suppose Finn and Sloan come from a land where each person either always lies or always tells the truth. If Finn says ``Exactly one of us is lying'' and Sloan says ``Finn is telling the truth'', then Finn and Sloan are both lying.}
+{
+\underline{Proof:} There are two cases for the proposition. Sloan is telling the truth, or Sloan is lying. Consider each case.
+\begin{enumerate}[(a)]
+\item
+Suppose Sloan is telling the truth. If Sloan's statement is true, Finn's statement must also be true. But Finn's statement claims that exactly one of them is lying, which in this scenario is a lie. Thus Finn must be telling the truth and lying, which is a contradiction.
+\item
+Suppose Sloan is lying. Then Finn must also be lying. Because Finn's statement is a lie, it is confirmed that both are lying.
+\end{enumerate}
+Since either both Sloan and Finn are lying or there is a contradiction, they both must be lying. \sig
+}
+
+
+
+\entry{Proposition 2.25}
+{There exists a real number $x$ such that $x^2 = 4$.}
+{\underline{Proof:} Consider the real number $2$. $2^2 = 4$. Thus, there exists a real number $x$ such that $x^2 = 4$. \sig
+}
+
+
+
+\entry{Proposition 2.27}
+{There exists a three-digit number less than $400$ with distinct digits that sum to $17$ and multiply to $108$.}
+{
+\underline{Proof:} Consider the number $296$. \[ 296 < 400 \] \[ 2 + 9 + 6 = 296 \] \[ 2 * 9 * 6 = 108 \]
+Therefore there exists a number that satisfies the specified conditions. \sig
+}
+
+
+
+\entry{Proposition 2.28}
+{There exist irrational numbers x and y such that x + y is rational.}
+{
+\underline{Proof:} Let $x = \sqrt{2}$ and $y = -\sqrt{2}$, both of which we have proved to be irrational. $x + y = 0$, which is rational. Therefore, there exist two numbers $x$ and $y$ such that $x + y$ is rational. \sig
+}
+
+
+
+\entry{Proposition 2.29}
+{There exists an irrational number $r$ such that $r^{\sqrt{2}}$ is rational.}
+{
+\underline{Proof:} Consider $\sqrt{2}^{\sqrt{2}}$. $\sqrt{2}^{\sqrt{2}}$ is either rational or irrational. Consider each case.
+\begin{enumerate}[(a)]
+\item
+Consider the case that $\sqrt{2}^{\sqrt{2}}$ is rational. Then let $r = \sqrt{2}$. $\sqrt{2}$ is irrational and $\sqrt{2}^{\sqrt{2}}$ is assumed rational so the proposition is true.
+\item
+Consider the case that $\sqrt{2}^{\sqrt{2}}$ is irrational. Then let $r = \sqrt{2}^{\sqrt{2}}$. ${\sqrt{2}^{\sqrt{2}}}^{\sqrt{2}} = 2$, so $r^{\sqrt{2}}$ is rational. Since r is assumed irrational and $r^{\sqrt{2}}$ is rational, the proposition is true.
+\end{enumerate}
+Because both cases results in the existence of some $r$ such that $r^{\sqrt{2}}$ is rational, the proposition is true. \sig
+}
+
+
+
+\entry{Proposition 2.30}
+{There exist integers $m$ and $n$ such that $7m + 2n = 1$.}
+{\underline{Proof:} Let $m = 1$ and $n = -3$. $7(1) + 2(-3) = 1$. Therefore there exist two integers $m$ and $n$ that satisfy the equation. \sig}
+
+
+
+\entry{Proposition 2.31}
+{Some two grandmothers of past or present U.S. presidents have birthdays within eleven days of one another.}
+{
+\underline{Proof:} To disproof the proposition, one would have to show that every two grandmothers had birthdays more than eleven days apart. There are at most 366 days a year and there are 88 grandmothers of past or present presidents. Placing the first grandmothers birthday on January 1 and the next 11 days later and the next 11 days after that would result in the placement of 33 grandma birthdays in the year. With 53 grandmas to go, the next cannot be placed without being within 11 days of another. Thus at least two grandmas must have birthdays within eleven days of one another. \sig
+}
+
+
+
+\entry{Propositioin 2.32}
+{For every odd integer $n$, $2n^2 + 3n + 4$ is odd.}
+{
+\underline{Proof:} Suppose $n$ is odd. Then $\exists~k : 2k + 1 = n$. Substituting into $2n^2 + 3n + 4$: \[ 2(2k + 1)^2 + 3(2k + 1) = 4 \] \[ 2(4k^2 + 7k + 4) + 1 \]
+Since $4k^2 + 7k + 4$ is some integer, $2n^2 + 3n + 4$ is odd for every odd $n$. \sig
+}
+
+
+
+\entry{Proposition 2.33}
+{For all positive real numbers $x$ and $y$, $(x + y) / 2 \leq \sqrt{xy}$.}
+{
+Consider the inequality $(x - y)^2 \geq 0$. This statement is true for all real numbers $x$ and $y$. This inequality can be manipulated: \[ (x - y)^2 \geq 0 \] \[ x^2 - 2xy + y^2 \geq 0 \] \[ x^2 + 2xk + y^2 \geq 4xy \] \[ (x + y)^2 \geq 4xy \] \[ x + y \geq 2\sqrt{xy} \] \[ \frac{x + y}{2} \geq \sqrt{xy} \]
+After performing algebra on the true statement, we arrive at the theorem, implying the theorem is true. \sig
+}
+
+
+
+\entry{Proposition 2.34}
+{For every real number $x$ there exists a real number $y$ such that $x < y$.}
+{
+\underline{Proof:} Consider any real number $x$. Let $y = x + 1$. Thus $x < y$. Therefore there always exists a larger $y$ for every $x$. \sig
+}
+
+
+
+\entry{Proposition 2.35}
+{There exists a real number $y$ such that for every real number $x$, $x < y$.}
+{
+\underline{Disproof:}
+Let $x = y + 1$. There is no such $y$ such that $y > x$ ($y$ cannot be greater than $y + 1$). \sig
+}
+
+
+
+\entry{Proposition 2.36}
+{For each real number $x$ there exists a real number $y$ such that $x + y = 0$.}
+{\underline{Proof:} Let $y = -x$. For any $x$, $x + y = 0$. \sig}
+
+
+
+\entry{Proposition 2.37}
+{For every positive real number $x$ there exists a positive real number $y < x$ such that $(\forall z)(z > 0 \implies yz \geq z)$.}
+{
+\underline{Disproof:} Let $x = 1$. Because $y$ must be positive and smaller than $x$, we know that $y$ must be between zero and one. Consider any positive integer $z$. $yz$ must be smaller than $z$ because $y$ must be less than one. Therefore the proposition is false. \sig
+}
+
+
+
+\entry{Proposition 2.38}
+{For every positive real number $\varepsilon$ there exists a positive integer $N$ such that $n \geq N \implies \frac{1}{n} < \varepsilon$.}
+{
+\underline{Proof:} Let $N = \lceil \frac{1}{\varepsilon} \rceil$. Thus $\frac{1}{N} <  \varepsilon$. Since $n > N$, $\frac{1}{n} < \frac{1}{N}$, and therefore is smaller than  $\varepsilon$. \sig
+}
+
+
+
+\entry{Proposition 2.39}
+{There exists a unique real number whose square is $4$.}
+{\underline{Disproof:} Consider $2$ and $-2$. Each value squares to four, so the proposition fails on account of uniqueness. \sig}
+
+
+
+\entry{Proposition 2.40}
+{There exists a unique positive real number whose square is $4$.}
+{
+\underline{Proof:} Two is a positive real number whose square is four. Any value greater than two produces a square greater than four, and any positive value less than two produces a square less than four. Thus, two is the only positive real number whose square is four. \sig
+}
+
+
+
+\entry{Exercise 3.5}
+{Create set definitions for the following notations and give the sets names as in Definition 3.4:}
+{
+\[
+(a, b] = \{ x \in \reals : a < x \leq b \}
+\]
+\[
+[a, b) = \{ x \in \reals : a \leq x < b \}
+\]
+Thus soft and hard brackets can be mixed to notate the inclusiveness of endpoints. \sig
+}
+
+
+
+\entry{Proposition 3.7}
+{$\{ 1, 2, 3, \pi \} \subseteq [1, 4)$.}
+{\underline{Proof:} Each elemet of $\{ 1, 2, 3, \pi \}$ is also contained in $[1, 4)$. \sig}
+
+
+
+\entry{Proposition 3.8}
+{$\emptyset = \{ \emptyset \}$.}
+{
+\underline{Disproof:} For two sets to be equal, they must be subsets of each other. $\{ \emptyset \}$ is not a subset of $\emptyset$, because its element $\emptyset$ is not contained in $\emptyset$. Therefore, the sets are not equal. \sig
+}
+
+
+
+\entry{Proposition 3.9}
+{$\emptyset \in \emptyset$.}
+{\underline{Disproof:} By definition, the null set cannot contain any elements. Thus anything being an element of the null set is false, including the null set. \sig}
+
+
+
+\entry{Proposition 3.10}
+{For every set $A$, $\emptyset \subseteq A$.}
+{Because $\emptyset$ has no elements, every element of $\emptyset$ is in $A$, regarless of the content of set $A$. \sig}
+
+
+
+\entry{Proposition 3.11}
+{$[\frac{1}{2}, \frac{5}{2}] \subseteq \mathbb{Q}$}
+{\underline{Disproof:} Consider the number $\sqrt{2}$. As shown in Theorem 2.21, $\sqrt{2}$ is irrational, so it is not a member of $\mathbb{Q}$. Because $2$ is between $\frac{1}{4}$ and $\frac{25}{4}$, $\sqrt{2}$ is a member of $[\frac{1}{2}, \frac{5}{2}]$. Thus there exists an element in $[\frac{1}{2}, \frac{5}{2}]$ that is not in $\mathbb{Q}$. Therefore $[\frac{1}{2}, \frac{5}{2}] \not\subseteq \mathbb{Q}$. \sig}
+
+
+
+\entry{Proposition 3.12}
+{$\{ \{ \emptyset \} \} \subseteq \{ \emptyset, \{ \emptyset \} \}$.}
+{
+\underline{Proof:} Every element of $\{ \{ \emptyset \} \}$ (there is only one) is present in $\{ \emptyset, \{ \emptyset \} \}$. Therefore $\{ \{ \emptyset \} \} \subseteq \{ \emptyset, \{ \emptyset \} \}$. \sig
+}
+
+
+
+\entry{Proposition 3.13}
+{$\{ 1, 2 \} \in \{ \{ 1, 2, 3 \}, \{ 2, 3 \}, 1, 2 \}$.}
+{
+\underline{Disproof:} $\{ \{ 1, 2, 3 \}, \{ 2, 3 \}, 1, 2 \}$ has four elements, two integers and two sets. None of these are the set $\{ 1, 2 \}$, so $\{ 1, 2 \} \not\in \{ \{ 1, 2, 3 \}, \{ 2, 3 \}, 1, 2 \}$. \sig
+}
+
+
+
+\entry{Proposition 3.14}
+{If $A$ and $B$ are both sets of real numbers, $A \subseteq B$ or $B \subseteq A$.}
+{
+\underline{Disproof:} Let $A = \{ 1 \}$ and $B = \{ 2 \}$, both of which are subsets of $\reals$. $A \not\subseteq B$ and $B \not\subseteq A$. Thus the proposition is not true for all $A$ and $B$. \sig
+}
+
+
+
+\entry{Theorem 3.15}
+{Let $A$, $B$, and $C$ be sets. If $A \subseteq B$ and $B \subseteq C$, then $A \subseteq$.}
+{
+\underline{Proof:} Let $x \in A$. Since $A \subseteq B$, $x \in B$. Since $B \subseteq C$ and $x \in B$, $x\in C$. Thus $x \in A \implies x \in C$, in other words $A \subseteq C$. \sig
+}
+
+
+
+\entry{Exercise 3.18}
+{
+Let $X = \{A : A \mbox{ is an ordinary set } \}$. Is $X$ ordinary? Is $X$ not ordinary?
+}
+{
+$X$ can't be ordinary or not ordinary. If $X$ were ordinary, it would have to contain itself, making it not ordinary. I it were not ordinary, it couldn't contain itself, making it ordinary. It is a paradox. \sig
+}
+
+
+
+\entry{Exercise 3.20}
+{Draw Venn diagrams illustrating the union, intersection and difference of sets $A$ and $B$ within the universe $U$.}
+{
+\pagebreak
+}
+
+
+
+\entry{Exercise 3.21}
+{
+Let $A = \{ 1, 3, 5, 7, 9 \}$ and $B = \{ 0, 2, 4, 7, 8 \}$. Determine $A \cup B$, $A~\cap~B$, $A \setminus B$ and $B \setminus A$.
+}
+{
+\[ A \cup B = \{ 0, 1, 2, 3, 4, 5, 7, 8, 9 \} \]
+\[ A~\cap~B = \{ 7 \} \]
+\[ A \setminus B = \{ 1, 3, 5, 9 \} \]
+\[ B \setminus A = \{ 0, 2, 4, 8 \} \]
+\sig
+}
+
+
+
+\entry{Exercise 3.22}
+{
+Write the open interval $(1, 3)$ as the union of two disjoint subsets of $\reals$.
+}
+{
+\[ (1, 2] \cup (2, 3) \]
+\sig
+}
+
+
+
+\entry{Proposition 3.23}
+{
+Let $A$, $B$ and $C$ be sets. If $A \subseteq B$, then $A \setminus C \subseteq B \setminus C$.
+}
+{
+\underline{Proof:} Let $x \in A \setminus C$. Thus $x \in A$ and $x \not\in C$. Because $A \subseteq B$, $x \in B$. Since $x \in B$ and $x \not\in C$, $x \in B \setminus C$. Therefore $x \in A \setminus C \implies x \in B \setminus C$. In other words,  $A \setminus C \subseteq B \setminus C$. \sig
+}
+
+
+
+\entry{Proposition 3.24}
+{
+Let  $A$, $B$, $C$ and $D$ be sets. If $A \cup B \subseteq C \cup D$, $A~\cap~B = \emptyset$, and $C \subseteq A$, then $B \subseteq D$.
+}
+{
+Proof: Let $x \in B$. Because  $A \cup B \subseteq C \cup D$, $x \in C \cup D$. Since $A~\cap~B = \emptyset$, $x \not\in A$. Because $C \subseteq A$, $x$ is not a member of $A$ either. Because $x \in  C \cup D$, but $x \not\in C$, $x$ must be a member of $D$. Since $x \in B \implies x \in D$, $B \subseteq D$.
+}
+
+
+
+\entry{Proposition 3.25}
+{
+If $A$, $B$ and $C$ are sets, then $A~\cap~(B \cup C) = (A~\cap~B) \cup (A~\cap~C)$.
+}
+{
+\begin{quote}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$A$ & $B$ & $C$ & $A~\cap~(B \cup C)$ & $(A~\cap~B) \cup (A~\cap~C)$ \\
+\hline
+$T$ & $T$ & $T$ & $T$ & $T$ \\
+\hline
+$T$ & $T$ & $F$ & $T$ & $T$ \\
+\hline
+$T$ & $F$ & $T$ & $T$ & $T$ \\
+\hline
+$T$ & $F$ & $F$ & $F$ & $F$ \\
+\hline
+$F$ & $T$ & $T$ & $F$ & $F$ \\
+\hline
+$F$ & $T$ & $F$ & $F$ & $F$ \\
+\hline
+$F$ & $F$ & $T$ & $F$ & $F$ \\
+\hline
+$F$ & $F$ & $F$ & $F$ & $F$ \\
+\hline
+\end{tabular}
+\end{quote}
+As illustrated by the above table, wherever an element lies in terms of $A$, $B$, and $C$, it is clearly either in both sets or in neither. Because the sets are logically equivalent in every case, they are equal. \sig
+}
+
+
+
+
+\entry{Exercise 3.27}
+{Draw a Venn diagram illustrating the complement of the set $A$ within the universe $U$.}
+{
+\vspace{1.5in}
+}
+
+
+
+\entry{Exercise 3.28}
+{
+Let the universe be the real numbers $\reals$.
+\begin{enumerate}[(a)]
+\item
+Determine the complement of $(2, \infty)$.
+\item
+Determine the complement of $[1, 3)$.
+\item
+Determine $\widetilde{\emptyset}$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$(-\infty, 2]$
+\item
+$(-\infty, 1) \cup [3, \infty)$.
+\item
+$\reals$ \sig
+\end{enumerate}
+}
+
+
+
+\entry{Proposition 3.29}
+{For any set $A$ in any universe $U$, $\widetilde{\widetilde{A}} = A$.}
+{
+\underline{Proof:}
+\begin{enumerate}[(a)]
+\item
+Let $x \in \widetilde{\widetilde{A}}$. Thus $x \not\in \widetilde{A}$. Thus $x \in A$. Since $x \in \widetilde{\widetilde{A}} \implies x \in A$, $\widetilde{\widetilde{A}} \subseteq A$.
+\item
+Let $x \in A$. Thus $x \not\in \widetilde{A}$. Thus $x \in \widetilde{\widetilde{A}}$. Since $x \in A \implies  x \in \widetilde{\widetilde{A}}$,  $A \subseteq \widetilde{\widetilde{A}}$.
+\end{enumerate}
+Because $\widetilde{\widetilde{A}}$ and $A$ are subsets of each other, they must be equal. \sig
+}
+
+
+
+\entry{Proposition 3.30}
+{Let $A$ and $B$ be sets in some universe. If $B \subseteq A$, then $A \subseteq B$.}
+{
+\underline{Disproof:} Let $A = \{ 1, 2, 3 \}$. Let $B = \{ 1 \}$. $B \subseteq A$, but $A \not\subseteq B$. Thus by example, the proposition is not true for every sets $A$ and $B$.
+}
+
+
+
+\entry{Theorem 3.31}
+{
+Let $A$ and $B$ be sets in some universe.
+\begin{enumerate}[(a)]
+\item
+$\widetilde{A~\cup~B}~=~\widetilde{A}~\cap~\widetilde{B}.$
+\item
+$\widetilde{A~\cap~B}~=~\widetilde{A}~\cup~\widetilde{B}.$
+\end{enumerate}
+and determine whether each of the following compound propositions is true or false, thoroughly justifying your answers.
+}
+{
+\begin{enumerate}[(a)]
+\item
+\underline{Proof:} Let $x \in \widetilde{A~\cup~B}$. This means $x \not\in A$ and $x \not\in B$. Since $x \not\in A$, it must be in $\widetilde{A}$. Similarly, $x$ must be in $\widetilde{B}$. Because $x$ is in both $\widetilde{A}$ and $\widetilde{B}$, it must be in their intersection, $\widetilde{A}~\cap~\widetilde{B}$. Since $x \in \widetilde{A~\cup~B} \implies x \in \widetilde{A}~\cap~\widetilde{B}$, $ \widetilde{A~\cup~B} \subseteq \widetilde{A}~\cap~\widetilde{B}$.
+
+Now let $x \in \widetilde{A}~\cap~\widetilde{B}$. Since $x$ is in both $\widetilde{A}$ and $\widetilde{B}$, it must not be in $A$ and must not be in $B$. If it isn't in either of them it certainly cannot be in their union,  $A~\cup~B$. Thus it is a member of  $\widetilde{A~\cup~B}$. So  $x \in \widetilde{A}~\cap~\widetilde{B} \implies x \in \widetilde{A~\cup~B}$, meaning $\widetilde{A}~\cap~\widetilde{B} \subseteq \widetilde{A~\cup~B}$.
+
+Since the sets are subsets of each other, they are equal. \sig
+\item
+\underline{Proof:} Let $x \in \widetilde{A~\cap~B}$. Since $x$ is not in the intersection of $A$ and $B$, it cannot be in both $A$ and $B$ at once. Thus it is either outside $A$ or outside $B$ or both. In other words, $x \in \widetilde{A}$ or $x \in \widetilde{B}$. By definition of union, $x \in \widetilde{A}~\cup~\widetilde{B}$. Since $x \in \widetilde{A~\cap~B} \implies x \in \widetilde{A}~\cup~\widetilde{B}$, $\widetilde{A~\cap~B} \subseteq \widetilde{A}~\cup~\widetilde{B}.$
+
+Now let $x \in \widetilde{A}~\cup~\widetilde{B}$. This means $x$ must be an element of $\widetilde{A}$ or of $\widetilde{B}$. In other words, $x \not\in A$ or $x \not\in B$. Since it has to be outside of at least one, its safe to say it can't be in both. In other words, $x \in \widetilde{A~\cap~B}$. Since $x \in \widetilde{A}~\cup~\widetilde{B} \implies x \in \widetilde{A~\cap~B}$, $\widetilde{A}~\cup~\widetilde{B} \subseteq \widetilde{A~\cap~B}$.
+
+Since the sets are subsets of each other, they are equal. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 3.34}
+{Let $\scripta = \{ [a, \infty) \subseteq \reals : a \in \reals \}$. Determine $\biguni{A \in \scripta} A$ and $\bigint{A \in \scripta} A$.}
+{
+\begin{enumerate}[(i)]
+\item
+$\biguni{A \in \scripta} A = \reals$.
+\item
+$\bigint{A \in \scripta} A = \emptyset$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 3.35}
+{Let $\scripta = \{ (a, a) \subseteq \reals : a > 0 \}$. Determine $\biguni{A \in \scripta} A$ and $\bigint{A \in \scripta} A$.}
+{
+\begin{enumerate}[(i)]
+\item
+$\biguni{A \in \scripta} A = \reals$.
+\item
+$\bigint{A \in \scripta} A = \{ 0 \}$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Proposition 3.36}
+{If $F$ is a family of sets, then for each $B \in \scripta$, $\bigint{A \in \scripta} A \subseteq B$.}
+{\underline{Proof:} Let $b \in \bigint{A \in \scripta} A$. Thus $b$ is in every element in $\scripta$. Since $B \in \scripta$, $b \in B$. Thus $b \in \bigint{A \in \scripta} A \implies b \in B$, so $\bigint{A \in \scripta} A \subseteq B$. \sig}
+
+
+
+\entry{Proposition 3.37}
+{If $\scripta$ is a family of sets, then for each $B \in \scripta$, $B \subseteq \biguni{A \in \scripta} A$.}
+{\underline{Proof:} Let $x \in B$. Since $B \in \scripta$, $x \in \biguni{A \in \scripta} A$. Thus $x \in B \implies x \in \biguni{A \in \scripta} A$, so $B \subseteq \biguni{A \in \scripta} A$. \sig}
+
+
+
+\entry{Exercise 3.39}
+{Determine $\powerset( \{ 1, 2 \})$.}
+{$\{ \{ 1, 2 \}, \{ 1 \}, \{ 2 \}, \emptyset \}$. \sig}
+
+
+
+\entry{Proposition 3.40}
+{Let $B$ be a set. Then $\biguni{A \in \powerset(B)} A = B$ and $\bigint{A \in \powerset(B)} A = \emptyset$.}
+{
+\underline{Proof:}
+\begin{enumerate}[(i)]
+\item
+Because every set is a subset of itself, $\powerset(B)$ must contain $B$. Thus $\biguni{A \in \powerset(B)} A$ contains every element of $B$. Adding additional subsets of $B$ to the union will not add any new elements, so $\biguni{A \in \powerset(B)} A = B$. \sig
+\item
+$\emptyset$ is a subset of every set, and thus is a member of ever powerset, including $\powerset(B)$. Thus $\bigint{A \in \powerset(B)}$ cannot contain any elements because $\emptyset$ shares no elements with other subsets. Thus $\bigint{A \in \powerset(B)} = \emptyset$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 3.43}
+{Let $\Delta = \{ \clubsuit, \heartsuit, \spadesuit \}$. Let $A_\clubsuit = \{ 2, 4, 7 \}, A_\heartsuit = \{ 3, 4, 5 \}$, and $A_\spadesuit = \{ 4, 5, 7 \}$. Let $\scripta = \{ A_\alpha : \alpha \in \Delta \}$. Determine $\biguni{A \in \scripta} A$ and $\bigint{A \in \scripta} A$.}
+{
+\begin{enumerate}[(i)]
+\item
+$\biguni{A \in \scripta} A = \{ 2, 3, 4, 5, 7 \}$.
+\item
+$\bigint{A \in \scripta} A = \{ 4 \}$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 3.44}
+{Suppose $A = \{ A_\alpha : \alpha \in \Delta \}$ is an indexed family of sets. Agree as a class on reasonable interpretations of the symbols $\biguni{\alpha \in \Delta} A_\alpha$ and $\bigint{\alpha \in \Delta} A_\alpha$.}
+{The union or intersection of all $A_\alpha$, such that $\alpha \in \Delta$ , and the content of $A_\alpha$ depends on $\alpha$ as defined in the set $A$. \sig}
+
+
+
+\entry{Exercise 3.45}
+{Let $\Delta = \reals$. For each $x \in \Delta$, let $B_x = [x^2, x^2 + 1]$ be the closed interval from $x^2$ to $x^2 + 1$. Determine $\biguni{A \in \reals} B_x$ and $\bigint{A \in \reals} B_x$.}
+{
+\begin{enumerate}[(i)]
+\item
+$\biguni{A \in \reals} B_x = [0, \infty)$.
+\item
+$\bigint{A \in \reals} B_x = \emptyset$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 3.45}
+{Let $\Delta = \naturals$. For each $n \in \Delta$, let $A_n = (\frac{-1}{n}, 2 + \frac{2}{n}]$. Determine $\biguni{n \in \naturals} A_n$ and $\bigint{n \in \naturals} A_n$.}
+{
+\begin{enumerate}[(i)]
+\item
+$\biguni{n \in \naturals} A_n = (-1, 4]$.
+\item
+$\bigint{n \in \naturals} A_n = (0, 2)$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 3.48}
+{
+For the indexed family of Exercise 3.46, interpret and determine
+\begin{enumerate}[(a)]
+\item
+$\displaystyle\bigcup_{n = 2}^{3} A_n$.
+\item
+$\displaystyle\bigcap_{n = 1}^{5} A_n$.
+\item
+$\displaystyle\bigcup_{n = 4}^{\infty} A_n$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$\displaystyle\bigcup_{n = 2}^{3} A_n = A_2 \cup A_3$.
+\item
+$\displaystyle\bigcap_{n = 1}^{5} A_n = A_1 \cap A_2 \cap A_3 \cap A_4 \cap A_5$.
+\item
+$\displaystyle\bigcup_{n = 4}^{\infty} A_n = A_4 \cup A_5 \cup A_6 \cup A_7 \dots$ \sig
+\end{enumerate}
+}
+
+
+
+\entry{Theorem 3.49}
+{If $\scripta = \{ A_\alpha : \alpha \in \Delta \}$ is an indexed family of sets and $B$ is a set, then \[ B \cup (\bigint{\alpha \in \Delta} A_\alpha) = \bigint{\alpha \in \Delta} (B \cup A_\alpha) \]}
+{
+\underline{Proof:} Let $x \in B \cup (\bigint{\alpha \in \Delta} A_\alpha)$. Thus $x$ must be in $B$ or in every element of $\scripta$. Consider each case. If $x \in B$, then $x$ is in every $(B \cup A_\alpha)$, and is thus in $\bigint{\alpha \in \Delta} (B \cup A_\alpha)$. Or if $x$ is in every element of $\scripta$, then it is in every $A_\alpha$. Thus it is in every $(B \cup A_\alpha)$, so it is in $\bigint{\alpha \in \Delta} (B \cup A_\alpha)$. Either way, it ends up in $\bigint{\alpha \in \Delta} (B \cup A_\alpha)$, so $B \cup (\bigint{\alpha \in \Delta} A_\alpha) \subseteq \bigint{\alpha \in \Delta} (B \cup A_\alpha)$. Opposite subset containment holds similarly. So $B \cup (\bigint{\alpha \in \Delta} A_\alpha) = \bigint{\alpha \in \Delta} (B \cup A_\alpha)$. \sig
+}
+
+
+
+\entry{Proposition 3.50}
+{If $\scripta = \{ A_\alpha : \alpha \in \Delta \}$ is an indexed family of sets and $B$ is a set, then \[ B \setminus (\bigint{\alpha \in \Delta} A_\alpha) = \bigint{\alpha \in \Delta} (B \setminus A_\alpha) \]}
+{
+\underline{Disproof:} Let $B = \{ 1, 2, 3, 4, 5 \}$, $\Delta = \{ 1, 2, 3 \}$, and $A_\alpha = [1, \alpha]$. Then $B \setminus (\bigint{\alpha \in \Delta} A_\alpha) = \{ 2, 3, 4, 5 \}$. However, $\bigint{\alpha \in \Delta} (B \setminus A_\alpha) = \{ 4, 5 \}$. Thus the sets are not always equal. \sig
+}
+
+
+
+\entry{Proposition 3.51}
+{If $\scripta = \{ A_\alpha : \alpha \in \Delta \}$ is an indexed family of sets and $B$ is a set, then \[ (\biguni{\alpha \in \Delta} A_\alpha) \setminus B = \biguni{\alpha \in \Delta} (A_\alpha \setminus B) \]}
+{
+\underline{Proof:} Let $x \in (\biguni{\alpha \in \Delta} A_\alpha) \setminus B$. Then $x$ is in an element of $\scripta$ and is not in $B$. Thus $x \in (A_\alpha \setminus B)$ for some $A_\alpha$. Since $x$ is in some $(A_\alpha \setminus B)$, it must be in the union, $\biguni{\alpha \in \Delta} (A_\alpha \setminus B)$. Thus $(\biguni{\alpha \in \Delta} A_\alpha) \setminus B \subseteq \biguni{\alpha \in \Delta} (A_\alpha \setminus B)$. Opposite subset containment holds similarly. So $(\biguni{\alpha \in \Delta} A_\alpha) \setminus B = \biguni{\alpha \in \Delta} (A_\alpha \setminus B)$. \sig
+}
+
+
+
+\entry{Proposition 3.52}
+{If $\scripta = \{ A_\alpha : \alpha \in \Delta \}$ is an indexed family of sets, then for each $\beta \in \Delta$, \[ \bigint{\alpha \in \Delta} A_\alpha \subseteq A_\beta \]}
+{
+\underline{Proof:} Let $x \in \bigint{\alpha \in \Delta} A_\alpha$. By definition of intersection, $x$ is in every element of $\scripta$. Since $\beta \in \Delta$, $A_\beta \in \scripta$. Thus $x \in A_\beta$. So $x \in \bigint{\alpha \in \Delta} A_\alpha \implies x \in A_\beta$. In other words, $\bigint{\alpha \in \Delta} A_\alpha \subseteq A_\beta$. \sig
+}
+
+
+
+\entry{Proposition 3.53}
+{If $\scripta = \{ A_\alpha : \alpha \in \Delta \}$ is an indexed family of sets, then for each $\beta \in \Delta$, \[ A_\beta \subseteq \biguni{\alpha \in \Delta} A_\alpha \]}
+{
+\underline{Proof:} Let $x \in A_\beta$. Because $\beta \in \Delta$, $A_\beta \in \scripta$. Thus $x \in \biguni{\alpha \in \Delta} A_\alpha$. So $x \in A_\beta \implies x \in \biguni{\alpha \in \Delta} A_\alpha$. In other words, $A_\beta \subseteq \biguni{\alpha \in \Delta} A_\alpha$. \sig
+}
+
+
+
+\entry{Theorem 3.54}
+{
+\begin{enumerate}[(a)]
+\item
+$\widetilde{\bigint{\alpha \in \Delta} A_\alpha} = \biguni{\alpha \in \Delta} \widetilde{A_\alpha}$.
+\item
+$\widetilde{\biguni{\alpha \in \Delta} A_\alpha} = \bigint{\alpha \in \Delta} \widetilde{A_\alpha}$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+\underline{Proof:} Let $x \in \widetilde{\bigint{\alpha \in \Delta} A_\alpha}$. Then $x \not\in \bigint{\alpha \in \Delta} A_\alpha$. Thus there is at least one $A_\alpha$ that does not contain $x$. There must be then, at least one $\widetilde{A_\alpha}$ that \emph{does} contain $x$. This means $x \in \biguni{\alpha \in \Delta} \widetilde{A_\alpha}$. Since $x \in \widetilde{\bigint{\alpha \in \Delta} A_\alpha} \implies x \in \biguni{\alpha \in \Delta} \widetilde{A_\alpha}$, $\widetilde{\bigint{\alpha \in \Delta} A_\alpha} \subseteq \biguni{\alpha \in \Delta} \widetilde{A_\alpha}$.
+
+Now let $x \in \biguni{\alpha \in \Delta} \widetilde{A_\alpha}$. Then $x$ must be a member of at least one $\widetilde{A_\alpha}$. So $x$ must be not an element of at least one $A_\alpha$. Thus $x$ can't be an element of $\bigint{\alpha \in \Delta} A_\alpha$, so $x \in \widetilde{\bigint{\alpha \in \Delta} A_\alpha}$. Thus $x \in \biguni{\alpha \in \Delta} \widetilde{A_\alpha} \implies x \in \widetilde{\bigint{\alpha \in \Delta} A_\alpha}$, so $\biguni{\alpha \in \Delta} \widetilde{A_\alpha} \subseteq \widetilde{\bigint{\alpha \in \Delta} A_\alpha}$.
+
+Since the sets are subsets of each other, they are equal. \sig
+\item
+\underline{Proof:} Let $x \in \widetilde{\biguni{\alpha \in \Delta} A_\alpha}$. Then $x \not\in \biguni{\alpha \in \Delta} A_\alpha$, which means $x$ is not in any $A_\alpha$. Since $x$ is not in any $A_\alpha$, it must be in every $\widetilde{A_\alpha}$. Thus $x \in \bigint{\alpha \in \Delta} \widetilde{A_\alpha}$. Since $x \in \widetilde{\biguni{\alpha \in \Delta} A_\alpha} \implies x \in \bigint{\alpha \in \Delta} \widetilde{A_\alpha}$, $\widetilde{\biguni{\alpha \in \Delta} A_\alpha} \subseteq \bigint{\alpha \in \Delta} \widetilde{A_\alpha}$.
+
+Now let $x \in \bigint{\alpha \in \Delta} \widetilde{A_\alpha}$. Then $x$ must be a member of every $\widetilde{A_\alpha}$. This tells us that $x$ is not in any $A_\alpha$, so $x \in \widetilde{\biguni{\alpha \in \Delta} A_\alpha}$. Since $x \in \bigint{\alpha \in \Delta} \widetilde{A_\alpha} \implies x \in \widetilde{\biguni{\alpha \in \Delta} A_\alpha}$, $\widetilde{\bigint{\alpha \in \Delta} A_\alpha} \subseteq \biguni{\alpha \in \Delta} \widetilde{A_\alpha}$. 
+
+Since the sets are subsets of each other, they are equal. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 4.2}
+{Let $A = {\clubsuit, \heartsuit}$ and $B = \{ \Box, \Delta, \# \}$. List the elements of $A \times B$.}
+{
+$\{ (\clubsuit, \Box), (\clubsuit, \Delta), (\clubsuit, \#), (\heartsuit, \Box), (\heartsuit, \Delta), (\heartsuit, \#) \}$ \sig
+}
+
+
+
+\entry{Proposition 4.3}
+{Given sets $A$ and $B$, $A \times B = B \times A$.}
+{
+\underline{Disproof:} Let $A = \{ 1 \}$ and $B = \{ 2 \}$. $A \times B = \{ (1, 2) \}$ but $B \times A = \{ (2, 1) \}$. Because the pairs are ordered, the sets are not equal. \sig
+}
+
+
+
+\entry{Proposition 4.4}
+{Let A, B and C be sets. Then $A \times (B~\cap~C) = (A \times B)~\cap~(A \times C)$.}
+{
+\underline{Proof:} Let $(x, y) \in A \times (B~\cap~C)$. Then $x \in A$ and $y \in B~\cap~C$. By definition of intersection, $y \in B$ and $y \in C$. Since $x \in A$ and $y \in B$, $(x, y) \in A \times B$. Since $x \in A$ and $y \in C$, $(x, y) \in A \times C$. Since $x$ is in both $A \times B$ and $A \times C$, it must be in their intersection, $(A \times B)~\cap~(A \times C)$. Since $(x, y) \in A \times (B~\cap~C) \implies (x, y) \in (A \times B)~\cap~(A \times C)$, $A \times (B~\cap~C) \subseteq (A \times B)~\cap~(A \times C)$. Showing that $(A \times B)~\cap~(A \times C) \subseteq A \times (B~\cap~C)$ is similar. Since the sets are subsets of each other, they are equal. \sig
+}
+
+
+
+\entry{Proposition 4.5}
+{Let $A$, $B$, $C$ and $D$ be sets. Then $(A \times B)~\cup~(C \times D) = (A~\cup~C) \times  (B~\cup~D)$.}
+{\underline{Disproof:} Let $A = \{ 1 \}$, $B = \{ 2 \}$, $C = \{ 3 \}$, and $D = \{ 4 \}$. $(A \times  B)~\cup~(C \times  D) = \{ (1, 2), (3, 4) \}$, but $(A~\cup~C) \times  (B~\cup~D) = \{ (1, 2), (1, 4), (3, 2), (3, 4) \}$. The sets are not equal. \sig}
+
+
+
+\entry{Exercise 4.8}
+{Consider the relation $R = \{ (x, y) \in \reals \times \reals: y - x \in [0, \infty) \}$. How is $xRy$ more commonly written?}
+{$y \geq x$. \sig}
+
+
+
+\entry{Exercise 4.10}
+{Define the relation $C$ on $R$ by $C = \{ (x, y) \in \reals \times  \reals : x^2 + y^2 \leq 9 \}$.
+\begin{enumerate}[(a)]
+\item
+Determine $Dom(C)$.
+\item
+Determine $Ran(C)$.
+\item 
+Viewing $\reals \times  \reals$ as the good old $xy$-plane, draw the set $C$, labeling one specific pair $(x, y) \in C$ and one specific pair $(x, y) \in \widetilde{C}$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$[-3, 3]$
+\item
+$[-3, 3]$
+\item
+Illustration:
+\vspace{2.5in}
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 4.11}
+{Determine the domain and range of the relation $H$ from $R$ to $[-5, \infty)$ given by $H = \{ (x, y) \in \reals \times [-5, \infty) : xy = 1 \}$.}
+{
+\begin{description}
+\item{Domain:} $\reals \setminus \{ 0 \}$.
+\item{Range:} $\reals \setminus [-\frac{1}{5}, 0]$. \sig
+\end{description}
+}
+
+
+
+\entry{Exercise 4.13}
+{Revisiting the relations $C$ and $H$ of Exercises 4.10 and 4.11, draw each of the following sets in the $xy$-plane:
+\begin{enumerate}[(a)]
+\item
+$I_\reals$;
+\item
+$I_\reals \cup C$;
+\item
+$C \cap H$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$I_\reals$
+\vspace{1in}
+\item
+$I_\reals \cup C$
+\vspace{1in}
+\item
+$C \cap H$
+\vspace{1in}
+\end{enumerate}
+}
+
+
+
+\entry{Theorem 4.15}
+{
+Let $R$ be a relation from $A$ to $B$.
+\begin{enumerate}[(a)]
+\item
+$Dom(R^{-1}) = Ran(R)$
+\item
+$Ran(R^{-1}) = Dom(R)$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+\underline{Proof:} Let $(\%, \#) \in R^{-1}$. So $\% \in Dom(R^{-1})$. By definition of inverse, $(\#, \%) \in R$, so $\% \in Ran(R)$. Thus $\% \in Dom(R) \iff \% \in Ran(R)$, so $Dom(R^{-1}) = Ran(R)$. \sig
+\item
+\underline{Proof:} Let $(\%, \#) \in R^{-1}$. So $\# \in Ran(R^{-1})$. By definition of inverse, $(\#, \%) \in R$, so $\# \in Dom(R)$. Thus $\# \in Ran(R) \iff \# \in Dom(R)$, so $Ran(R^{-1}) = Dom(R)$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 4.16}
+{Determine the inverse relation of the relation $C$ of Exercise 4.10. Sketch it as a subset of $\reals \times \reals$.}
+{$C^{-1} = C$ because switching $x$ and $y$ results in the same set. \sig \vspace{2.15in}}
+
+
+
+\entry{Exercise 4.20}
+{Let $R = \{(1, 5), (2, 2), (3, 4), (5, 2)\}$ and $S = \{(2, 4), (3, 4), (3, 1), (5, 5)\}$ be relations on $N$. Determine both $S \circ R$ and $R \circ S$.}
+{
+\begin{enumerate}[(a)]
+\item
+$S \circ R = \{(1, 5), (2, 4), (5, 4)\}$
+\item
+$R \circ S = \{(3, 5), (5, 2)\}$
+\end{enumerate}
+}
+
+
+
+\entry{Theorem 4.23}
+{
+\begin{enumerate}[(a)]
+\item
+$(R^{-1})^{-1} = R$
+\item
+$T \circ (S \circ R) = (T \circ S) \circ R$
+\item
+$I_B \circ R = R$ and $R \circ I_A = R$
+\item
+$(S \circ R)^{-1} = R^{-1} \circ S^{-1}$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+\underline{Proof:} Let $(\#, \%) \in R$. By definition of inverse, $(\%, \#) \in R^{-1}$. Similarly, $(\#, \%) \in (R^{-1})^{-1}$. Therefore  $(\#, \%) \in R \iff (\#, \%) \in (R^{-1})^{-1}$, so $(R^{-1})^{-1} = R$. \sig
+\item
+\underline{Proof:} Let $(a, d) \in T \circ (S \circ R)$. By definition of relation, there exists some $c \in C$ such that $(c, d) \in T$ and $(a, c) \in  S \circ R$. From this we can determine that there exists some $b \in B$ such that $(a, b) \in R$ and $(b, c) \in S$.  Because $(b, c) \in S$ and $(c, d) \in T$, $(b, d) \in  T \circ S$. Because $(a, b) \in R$ and $(b, d) \in T \circ S$, $(a, d) \in (T \circ S) \circ R$. Since $(a, d) \in T \circ (S \circ R) \implies (a, d) \in (T \circ S) \circ R$,  $T \circ (S \circ R) \subseteq (T \circ S) \circ R$. 
+
+Now let $(a, d) \in (T \circ S) \circ R$. Then $\exists~b \in B$ such that $(a, b) \in R$ and $(b, d) \in (T \circ S)$. So $\exists~c \in C$ such that $(b, c) \in S$ and $(c, d) \in T$. Since $(a, b) \in R$ and $(b, c) \in S$, $(a, c) \in (S \circ R)$. So because $(a, c) \in (S \circ R)$ and $(c, d) \in T$, $(a, d) \in T \circ (S \circ R)$. Since $(a, d) \in (T \circ S) \circ R \implies (a, d) \in T \circ (S \circ R)$, $(T \circ S) \circ R \subseteq T \circ (S \circ R)$.
+
+Since the sets $T \circ (S \circ R)$ and $(T \circ S) \circ R$ are subsets of each other, they are equal. \sig
+\item
+\underline{Proof:} Let $(\#, \%) \in R$. By definition of relation, $\% \in B$. By definition of identity, $(\%, \%) \in I_B$. Since $(\#, \%) \in R$ and $(\%, \%) \in I_B$, $(\#, \%) \in I_B \circ R$. This tells us $(\#, \%) \in I_B \circ R \iff (\#, \%) \in R$ so  $I_B \circ R = R$. \sig
+
+\underline{Proof:} Let $(\#, \%) \in R$. By definition of relation, $\# \in A$. By definition of identity, $(\#, \#) \in I_A$. Since $(\#, \%) \in R$ and $(\#, \#) \in I_A$, $(\#, \%) \in R \circ I_A$. This tells us $(\#, \%) \in R \circ I_A \iff (\#, \%) \in R$ so  $R \circ I_A = R$. \sig
+\item
+\underline{Proof:} Let $(c, a) \in (S \circ R)^{-1}$. Then $(a, c) \in  S \circ R$. Thus $\exists~b \in B$ such that $(a, b) \in R$ and $(b, c) \in S$. By definition of inverse, $(b, a) \in R^{-1}$ and $(c, b) \in S^{-1}$. Therefore $(c, a) \in R^{-1}\circ S^{-1}$. Since $(c, a) \in (S \circ R)^{-1} \implies (c, a) \in R^{-1} \circ S^{-1}$, $(S \circ R)^{-1} \subseteq R^{-1} \circ S^{-1}$. 
+
+Now let $(c, a) \in R^{-1}\circ S^{-1}$. Thus $\exists~b \in B$ such that $(c, b) \in S^{-1}$ and $(b, a) \in R^{-1}$. Then $(a, b) \in R$ and $(b, c) \in S$. Thus $(a, c) \in S \circ R$, which means $(c, a) \in (S \circ R)^{-1}$. Since $(c, a) \in R^{-1}\circ S^{-1} \implies (c, a) \in (S \circ R)^{-1}$, $R^{-1}\circ S^{-1} \subseteq (S \circ R)^{-1}$.
+
+Since we proved $(S \circ R)^{-1}$ and $R^{-1} \circ S^{-1}$ are subsets of eachother, they are equal. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 4.25}
+{
+Check the following relations on A = {1, 2, 3} for reflexivity, symmetry and transitivity.
+\begin{enumerate}[(a)]
+\item
+$R1 = \{(1, 1), (1, 2), (2, 1)\}$
+\item
+$R2 = \{(1, 1), (1, 2), (2, 1), (2, 2), (3, 3)\}$
+\item
+$R3 = \{(1, 2)\}$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+Symmetry, transitivity. \sig
+\item
+Reflexivity, symmetry, transitivity. \sig
+\item
+Transitivity \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 4.26}
+{Construct a relation $R$ on $\{1, 2, 3\}$ that is reflexive and transitive, but not symmetric.}
+{$\{(1, 1), (2, 2), (3, 3), (1, 2)\}$ \sig}
+
+
+
+\entry{Proposition 4.27}
+{The relation $R$ on $\mathbb{Z}$ defined by $R = \{(x, y) \in \mathbb{Z} \times \mathbb{Z} : x^2 = y^2\}$ is an equivalence relation.}
+{
+\underline{Proof:}
+\begin{enumerate}[(a)]
+\item
+Let $a \in \mathbb{Z}$. Because $a^2 = a^2$, $(a, a) \in R$. Thus $R$ is reflexive.
+\item
+Let $(a, b) \in R$. Since $a^2 = b^2 \implies b^2 = a^2$, $(b, a) \in R$. Thus $R$ is symmetric.
+\item
+Suppose $(a, b) \in R$ and $(b, c) \in R$. Then $a^2 = b^2$ and $b^2 = c^2$. By substitution, $a^2 = c^2$, meaning $(a, c) \in R$. Thus $R$ is transitive.
+\end{enumerate}
+Since $R$ is reflexive, symmetric, and transitive, it is by definition an equivalence relation. \sig
+}
+
+
+\entry{Proposition 4.28}
+{The relation $S$ on $\powerset(\reals)$ defined by $S = \{(A, B) \in \powerset(\reals) \times \powerset(\reals) : A \subseteq B\}$ is an equivalence relation.}
+{
+\underline{Disproof:} Let $A = \{1\}$ and $B = \{1, 2\}$. $(A, B) \in S$ because $A \subseteq B$. However, $(B, A) \not\in S$ because $B \not\subseteq A$. Thus $S$ is not symmetric, and therefore is not an equivalence relation. \sig
+}
+
+
+
+\entry{Theorem 4.32}
+{For each $m \in \mathbb{Z} \setminus \{0\}$, the relation $\equiv_m$ is an equivalence relation.}
+{
+\underline{Proof:} Let $m \in \mathbb{Z} \setminus \{0\}$. 
+\begin{enumerate}[(a)]
+\item
+Let $a \in \mathbb{Z}$. Then the pair $(a, a) \in~\equiv_m$ because $mk = (a - a) = 0$ for some $k = 0$ (in other words, 4 divides a - a). Thus $\equiv_m$ is reflexive.
+\item
+Suppose $(a, b) \in~\equiv_m$. Then there must exist some $k \in \mathbb{Z}$ such that $mk = (a -b)$. Thus $m(-k) = (b - a)$, so $(b, a) \in~\equiv_m$. Since $(a, b) \in~\equiv_m \implies (b, a) \in~\equiv_m$, $\equiv_m$ is symmetric.
+\item
+Suppose $(a, b) \in~\equiv_m$ and $(b, c) \in~\equiv_m$. Thus $(\exists k_1)[mk_1 = a - b]$ and $(\exists k_2)[mk_2 = b - c]$. These equations can be added and simplified.
+\[ mk_1 = a - b \]
+\[ + mk_2 = b - c \]
+\[ \implies m(k_1 + k_2) = a - c \]
+This equation shows that $(a, c) \in~\equiv_m$, telling us that $\equiv_m$ is transitive.
+\end{enumerate}
+Since $\equiv_m$ is reflexive, symmetric, and transitive, it is by definition an equivalence relation. \sig
+}
+
+
+
+\entry{Exercise 4.33}
+{Determine the set $3/\equiv_4$.}
+{The set $3/~\equiv_4$ = $\{ 4n - 1 : n \in \mathbb{Z} \}$. \sig}
+
+
+
+\entry{Exercise 4.34}
+{Determine the set $\mathbb{Z}/\equiv_7$. What does this set of ``clumps'' look like from space?}
+{$\mathbb{Z}/\equiv_7$ = $\{ \{ 7n : n \in \mathbb{Z} \}, \{ 7n - 1 : n \in \mathbb{Z} \}, \{ 7n - 2 : n \in \mathbb{Z} \}, \{ 7n - 3 : n \in \mathbb{Z} \}, \{ 7n - 4 : n \in \mathbb{Z} \}, \{ 7n - 5 : n \in \mathbb{Z} \}, \{ 7n - 6 : n \in \mathbb{Z} \} \}$. This set consists of seven clumps that combine to equal $\mathbb{Z}$. \sig}
+
+
+
+\entry{Proposition 4.35}
+{Let $m \in \mathbb{Z} \setminus {0}$. If $a \equiv_m b$ and $c \equiv_m d$, then $(a + c) \equiv_m (b + d)$.}
+{
+\underline{Proof:} Suppose $a \equiv_m b$ and $c \equiv_m d$. Then $(\exists k_1) a - b = mk_1$ and $(\exists k_2) c - d = mk_2$. Adding these equations yields $m(k_1 + k_2) + (b + d) = a + c$. So $m(k_1 + k_2) = (a + c) - (b + d)$, meaning $m$ divides $(a + c) - (b + d)$. Thus $(a + c) \equiv_m (b + d)$. \sig
+}
+
+
+
+\entry{Exercise 4.36}
+{
+Conjecture and assess a statement for modular multiplication analogous to the preceding proposition.
+}
+{
+\underline{Claim:} If $a \equiv_m b$ and $c \equiv_m d$, then $(ac + bd) \equiv_m (bc + ad)$.
+\underline{Proof:} Suppose $a \equiv_m b$ and $c \equiv_m d$. Then $(\exists k_1) a - b = mk_1$ and $(\exists k_2) c - d = mk_2$. Multiplying these equations yields $m^{2}k_{1}k_{2} = (a - b)(c - d)$. So $m^{2}k_{1}k_{2} = (ac + bd) - (bc + ad)$, meaning $m$ divides $(ac + bd) - (bc + ad)$. Thus $(ac + bd) \equiv_m (bc + ad)$. \sig
+}
+
+
+
+\entry{Theorem 4.37}
+{
+Let $R$ be an equivalence relation on the set $A$.
+\begin{enumerate}[(a)]
+\item
+For each $x \in A$, $x \in x/R$.
+\item
+$A = \biguni{x \in A} x/R$.
+\item
+$(x, y) \in R \iff x/R = y/R$.
+\item
+$(x, y) \not\in R \iff x/R~\cap~y/R = \emptyset$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+\underline{Proof:} Let $x \in A$. Since $R$ is reflexive, $(a, a) \in R$. Thus $x \in x/R$. \sig
+\item
+\underline{Proof:}
+   \begin{enumerate}[(i)]
+   \item
+   Let $n \in A$. We know from part (a) that $n \in n/R$. Since $n/R \in A/R$, $n \in \biguni{x \in A} x/R$. Thus $n \in A \implies n \in \biguni{x \in A} x/R$, so $A \subseteq \biguni{x \in A} x/R$.
+   \item
+   Now let $n \in \biguni{x \in A} x/R$. Then $n$ must be an element of $A$ by definition. So $\biguni{x \in A} x/R \subseteq A$.
+   \end{enumerate}
+Since the sets are subsets of each other, $A = \biguni{x \in A} x/R$. \sig
+\item
+\underline{Proof:} Let $(x, y) \in R$.
+   \begin{enumerate}[(i)]
+   \item
+   Let $n \in x/R$. Since $R$ is reflexive, $(n, x) \in R$. Since $(n, x) \in (x, y)$, $(n, y) \in R$. Thus $(y, n) \in R$. So $y \in y/R$. Since $n \in x/R \implies n \in y/R$, $x/R \subseteq y/R$. Showing that $y/R \subseteq x/R$ is similar. Since the sets are subsets of each other, $x/R = y/R$.
+   \item
+   Suppose $x/R = y/R$. $x \in x/R$ , so $x \in y/R$, so $(x, y) \in R$.
+   \end{enumerate}
+Since both directions of the biconditional are true, the bicondition is true. \sig
+\item
+\underline{Proof:} 
+   \begin{enumerate}[(i)]
+   \item
+   Suppose $(x, y) \not\in R$. Let $n \in x/R~\cap~y/R$. Since $n \in x/R$, $\exists~(x, n) \in R$, and since $n \in y/R$, $\exists~(n, y) \in R$. Because $\exists~(x, n) \in R$ and $\exists~(n, y) \in R$, $\exists~(x, y) \in R$. Since this contradicts the supposition that $(x, y) \not\in R$, there is no such $n$ in $x/R~\cap~y/R$. In other words, $x/R~\cap~y/R = \emptyset$.
+   \item
+   Suppose $(x, y) \in R$. Then $x \in x/R$. Similarly, since $(y, x) \in R$, $x \in y/R$. Thus $x \in x/R~\cap~y/R$, so $x/R~\cap~y/R \neq \emptyset$. By contraposition, $x/R~\cap~y/R = \emptyset \implies (x, y) \not\in R$.
+   \end{enumerate}
+Since both directions of the biconditional are true, the bicondition is true. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 4.40}
+{Construct a partition $A$ of the real numbers $\reals$ into infinitely many disjoint sets.}
+{
+$A = \{ \{ a, -a \} : a \in \reals \}$. \sig
+}
+
+
+
+\entry{Theorem 4.41}
+{Let $\scripta$ be a partition of the nonempty set $A$. Define the relation $Q$ on $A$ by
+\[
+Q = \{ (x, y) \in A \times A : (\exists C \in \scripta)(x \in C \land y \in C) \}.
+\]
+Then
+\begin{enumerate}[(a)]
+\item
+$Q$ is an equivalence relation on $A$.
+\item
+$A/Q = \scripta$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+\underline{Proof:}
+   \begin{enumerate}[(i)]
+   \item
+   Let $\Delta \in A$. By definition of partition, $\exists C \in \scripta : \Delta \in C$. Thus $(\Delta, \Delta) \in Q$, so $Q$ is reflexive.
+   \item
+   Let $(a, b) \in Q$. Thus $(\exists C \in \scripta) a \in C \land b \in C$. So $(b, a) \in Q$, which means $Q$ is symmetric.
+   \item
+   Suppose $(a, b) \in Q$ and $(b, c) \in Q$. Then $(\exists C \in \scripta) a \in C \land b \in C \land c \in C$. Since $a \in C \land c \in C$, $(a, c) \in Q$. Thus $Q$ is transitive.
+   \end{enumerate}
+   Since $Q$ is reflexive, symmetric and transitive, $Q$ is an equivalence relation. \sig
+\item
+\underline{Proof:} Let $n \in A/Q$. Because $\scripta$ is a partition of the set $A$, we know that $A = \biguni{X \in \scripta} X$.
+
+\end{enumerate}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\entry{Exercise 5.2}
+{
+Let $A = \{ 1, 2, 3 \}$ and B = $\{ 6, π, -1, 13 \}$. Determine which of the
+following relations are functions from $A$ to $B$.
+\begin{enumerate}[(a)]
+\item
+$f_1 = \{(1, \pi), (2, 6), (3, 6), (2, -1) \}$
+\item
+$f_2 = \{(1, -1), (2, \pi), (3, \pi) \}$
+\item
+$f_3 = \{(1, 6), (3, -1) \}$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$f_1$ is not a function. $2$ maps to several images.
+\item
+$f_2$ is a function.
+\item
+$f_3$ is not a function from $A$ to $B$, it's domain is not $A$.
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 5.3}
+{Recall the relation $C = \{ (x, y) \in \reals \times \reals : x^2 + y^2 \leq 9 \}$ of Exercise 4.10. Is $C$ a function from $[-3, 3]$ to $\reals$?}
+{
+No. $(0, 3) \in C$ and $(0, 1) \in C$, so $C$ is not a function from $[-3, 3]$ to $\reals$. \sig
+}
+
+
+
+\entry{Exercise 5.4}
+{Is the relation $D = \{ (x, y) \in \reals \times \reals : x^2 + y^2 = 9 \}$ a function from $[-3, 3]$ to $\reals$?}
+{
+No. $(3, 3) \in D$ and $(3, -3) \in D$, $D$ is not a function from $[-3, 3]$ to $\reals$. \sig
+}
+
+
+
+\entry{Exercise 5.5}
+{Is the relation $E = \{ (x, y) \in \reals \times \reals : x^2 + y^2 = 9 and y \geq 0 \}$ a function from $[-3, 3]$ to $\reals$?}
+{
+Yes, for every member of the domain $[-3, 3]$ there is one and only one value greater than zero that satisfies the equation. \sig
+}
+
+
+
+\entry{Exercise 5.6}
+{In light of the preceding three exercises, what graphical “rule of thumb” from your past is condition (ii) in Definition 5.1 the formal version of?}
+{The vertical line test. \sig}
+
+
+
+\entry{Exercise 5.9}
+{
+Referring to Example 5.7, address the following questions.
+\begin{enumerate}[(a)]
+\item
+What is the image of $1$ under $f$?
+\item
+What is the value of $f$ at $3$?
+\item
+What is $13$ the image of under $f$?
+\item
+What is the range of $f$ ?
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$\pi$.
+\item
+$\pi$.
+\item
+Nothing.
+\item
+$\{ 1, \pi \}$. \sig
+\end{enumerate}
+}
+
+
+
+\entry{Proposition 5.10}
+{Let $A$ be a set. The identity relation $I_A$ is a function from $A$ to $A$.}
+{
+\underline{Proof:} Let $a \in A$. Then by definition of identity, $(a, a) \in A$. Thus $a \in Dom(I_A)$, so $A \subseteq Dom(I_A)$. Letting $a \in Dom(I_A)$ implies $a \in A$ by definition, so $Dom(I_A) \subseteq A$. Thus $Dom(A) = A$.
+
+Now let $(x, y) \in I_A \land (x, z) \in I_A$. By definition of identity, $x = y$ and $x = z$. Thus $y = z$, so $I_A$ passes the vertical line test.
+
+Because $Dom(I_A) = A$ and $(x, y) \in I_A \land (x, z) \in I_A \implies y = z$, $I_A$ is indeed a function from $A$ to $A$. \sig
+}
+
+
+
+\entry{Exercise 5.11}
+{
+Let $f : \reals \to \reals$ be the function $f = \{ (x, 3) \in \reals \times\reals : x \in \reals \}$. Every element in the domain has the same image: $f(x) = 3$. This is an example of
+a constant function. \\
+Give a representation of this function f both as a mapping diagram like in
+Example 5.7 and in the old fashioned precalculus way by drawing its graph in the
+xy-plane.
+}
+{
+\vspace{2.5in}
+}
+
+
+
+\entry{Exercise 5.12}
+{
+Let $U$ be some universe and $A \subseteq U$. Let $\chi_A : U \to \{ 0, 1 \}$ be the function
+\[
+\chi_A(x) = \left\{ \begin{array}{ll}
+1 & \mbox{if $x \in A$}, \\
+0 & \mbox{if $x \in U \setminus A$}. \end{array} \right.
+\]
+The function $\chi_A$ is called the characteristic function of the set $A$
+\begin{enumerate}[(a)]
+\item Give a representation of this function $f$ as a mapping diagram.
+\item If $U = \reals$ and $A = (1, 3]$, give a representation of $\chi_A$ by drawing its graph in the xy-plane.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+\vspace{2in}
+\item
+\vspace{2in}
+\end{enumerate}
+}
+
+
+\entry{Theorem 5.13}
+{
+Two functions $f$ and $g$ are equal if and only if
+\begin{enumerate}[(a)]
+\item
+$Dom(f) = Dom(g)$, and
+\item
+For each $x \in Dom(f)$, $f(x) = g(x)$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(i)]
+\item
+\underline{Claim:} $f = g \implies Dom(f) = Dom(g) \land (\forall x \in Dom(f)) f(x) = g(x)$.
+\underline{Proof:} Suppose $f = g$.
+   \begin{enumerate}[(a)]
+   \item
+   Let $x \in Dom(f)$. Then there exists some $y$ such that $(x, y) \in f$. Since $f = g$, $(x, y) \in g$. Thus $x \in Dom(g)$, so $Dom(f) \subseteq Dom(g)$. Similarly, $Dom(g) \subseteq Dom(f)$. So $Dom(f) = Dom(g)$.
+   \item
+   Let $x \in Dom(f)$. Then there exists some $y$ such that $(x, y) \in f$. Since $f = g$, $(x, y) \in g$. Then $f(x) = y$ and $g(x) = y$, so $f(x) = g(x)$.
+   \end{enumerate}
+   Therefore $f = g \implies Dom(f) = Dom(g)$ and $(\forall x \in Dom(f)) f(x) = g(x)$. \sig
+\item
+\underline{Claim:} $Dom(f) = Dom(g) \land (\forall x \in Dom(f)) f(x) = g(x) \implies f = g$.
+\underline{Proof:} Suppose $Dom(f) = Dom(g) \land (\forall x \in Dom(f)) f(x) = g(x)$. Let $(x, f(x)) \in f$. So $x \in Dom(f)$. Since $Dom(f) = Dom(g)$, $x \in Dom(g)$. This means $(x, g(x)) \in g$. Since $x \in Dom(f)$,  $f(x) = g(x)$ by supposition. Thus $(x, f(x)) \in g$. Since $(x, f(x)) \in f \implies (x, f(x)) \in g$, $f \subseteq g$. Similarly, $g \subseteq f$. So $f = g$.
+\end{enumerate}
+Because both directions of the biconditional are true, the theorem is true. \sig
+}
+
+
+
+\entry{Exercise 5.15}
+{Mimic Example 5.14 and compute $f \circ g$ for those same two functions.}
+{
+\begin{align*}
+f \circ g & = \{ (a, c) \in \reals \times\reals : (\exists b \in \reals)((a, b) \in g \land (b, c) \in f) \} \\
+          & = \{ (a, c) \in \reals \times\reals : (\exists b \in \reals)(b = a^2 \land c = e^b) \} \\
+          & = \{ (a, c) \in \reals \times\reals : c = e^{a^2} \}
+\end{align*}
+That is, $(f \circ g)(x) = e^{x^2}$. \sig
+}
+
+
+
+\entry{Theorem 5.16}
+{If $f : A \to B$ and $g : B \to C$, then $g \circ f : A \to C$.}
+{
+\underline{Proof:} Suppose $f : A \to B$ and $g : B \to C$.
+\begin{enumerate}[(a)]
+\item
+\underline{Claim:} $Dom(g \circ f) = A$.
+
+By definition of function, $Dom(f) = A$ and $Dom(G) = B$. Let $a \in A$. Then $(\exists b \in B) (a, b) \in f$. Since $b \in B$, $b \in Dom(g)$. So $(\exists c \in C) (b, c) \in g$. Thus $(a, c) \in g \circ f$, so $a \in Dom(g \circ f)$. Thus $A \subseteq g \circ f$.
+
+By Proposition 4.21, $Dom(g \circ f) \subseteq Dom(f)$. Since $Dom(f) = A$, $Dom(g \circ f) \subseteq A$. Since the sets are subsets of each other, $Dom(g \circ f) = A$.
+\item
+\underline{Claim:} $[ (x, z) \in g \circ f \land (x, w) \in g \circ f ] \implies z = w$.
+
+Suppose $(x, z) \in g \circ f \land (x, w) \in g \circ f$. Because $g \circ f$ is a relation from $A$ to $C$, both $z$ and $w$ must be in $C$. By definition of composition, $(\exists b \in B) (x, b) \in f \land (b, z) \in g$ and $(\exists y \in B) (x, y) \in f \land (y, w) \in g$. Since $f$ is a function, $y = b$. Since $(y, z) \in g$ and $(y, w) \in g$ and $g$ is a function, $z = w$.
+\end{enumerate}
+Since $Dom(g \circ f) = A$ and $[ (x, z) \in g \circ f \land (x, w) \in g \circ f ] \implies z = w$, $g \circ f : A \to C$. \sig
+}
+
+
+
+\entry{Theorem 5.17}
+{If $f : A \to B$ and $g : B \to C$ and $h : C \to D$, then $h \circ (g \circ f) = (h \circ g) \circ f$.}
+{
+\underline{Proof:} Functions are just special cases of relations. Theorem 4.23b states that composition of relations is transitive, so this also applies to functions. \sig
+}
+
+
+
+\entry{Theorem 5.18}
+{If $f : A \to B$, then $f \circ I_A = f$ and $I_B \circ f = f$.}
+{
+\underline{Proof:} Suppose $f : A \to B$.
+\begin{enumerate}[(a)]
+\item
+\underline{Claim:} $f \circ I_A = f$.
+
+Let $(x, y) \in f \circ I_A$. Since $(x, x) \in I_A$ by definition of relation, $(x, y)$ must be in $f$ to bridge the gap. Thus $f \circ I_A \subseteq f$.
+
+Now let $(x, y) \in f$. Since $(x, x) \in I_A$ by definition of relation, $(x, y)$ must be in $f \circ I_A$. Thus $f \subseteq f \circ I_A$.
+
+Since the sets are subsets of each other, $f = f \circ I_A$.
+
+\item
+\underline{Claim:} $f \circ I_A = f$.
+
+Let $(x, y) \in I_B \circ f$. Since $(y, y) \in I_B$ by definition of relation, $(x, y)$ must be in $f$ to bridge the gap. Thus $I_B \circ f \subseteq f$.
+
+Now let $(x, y) \in f$. Since $(y, y) \in I_B$ by definition of relation, $(x, y)$ must be in $I_B \circ f$. Thus $f \subseteq f \circ I_A$.
+
+Since the sets are subsets of each other, $f = I_B \circ f$.
+\end{enumerate}
+Therefore composing a function with an identity relation makes no changes to the function. \sig
+}
+
+
+
+\entry{Exercise 5.19}
+{Show that the inverse relation $f_{-1}$ to the function $f : \reals \to \reals$ given by $f(x) = 2x^2 + 1$ is not itself a function.}
+{
+Consider the ordered pairs $(-1, 3)$ and $(1, 3)$. Both are members of $f$. Thus $(3, -1)$ and $(3, 1)$ are both members of $f^{-1}$. Because $3$ maps to both $-1$ and $1$, $f^{-1}$ is not a function. \sig
+}
+
+
+
+\entry{Exercise 5.23}
+{Show that $f : \reals \to \reals$ given by $f(x) = \sin(x)$ is not 1-1.}
+{
+Consider the ordered pairs $(0, 0)$ and $(\pi, 0)$. Because $0$ is mapped to by multiple members of the domain, $f$ is not 1-1. \sig
+}
+
+
+
+\entry{Exercise 5.24}
+{Find a domain $A \subset \reals$ such that the function $f : A \to \reals$ given by $f(x) = \sin(x)$ is 1-1.}
+{
+Let $A = [\frac{-\pi}{2}, \frac{\pi}{2}]$. No member of the codomain is mapped to by multiple members of the domain, so the function is 1-1. \sig
+}
+
+
+
+\entry{Exercise 5.25}
+{What graphical ``rule of thumb'' from your past is condition ($\dagger$) in Definition 5.21 the formal version of?}
+{
+Condition ($\dagger$) in Definition 5.21 is the formal version of the horizontal line test. \sig
+}
+
+
+
+\entry{Proposition 5.26}
+{If $f : A \to B$ and $g : B \to C$ are both 1-1, then $g \circ f : A \to C$ is 1-1.}
+{
+\underline{Proof:} Suppose $f : A \to B$ and $g : B \to C$ are both 1-1. Let $(g \circ f)(x) = y$ and $(g \circ f)(z) = y$. Since $(x, y) \in g \circ f$, $\exists n \in B : (x, n) \in f \land (n, y) \in g$. Also since $(x, z) \in g \circ f$, $\exists m \in B : (x, m) \in f \land (m, z) \in g$. Since $f$ is a function, $m = n$. Thus $(n, y) \in g$ and $(n, z) \in g$. Since $g$ is a function, $z = y$. Since $[(g \circ f)(x) = y$ and $(g \circ f)(z) = y] \implies z = y$, $g \circ f$ is by definition 1-1. \sig
+}
+
+
+
+\entry{Proposition 5.27}
+{If $g \circ f : A \to C$ is 1-1, $f : A \to B$, and $g : B \to C$, then $g : B \to C$ is 1-1.}
+{
+\underline{Disproof:} Let $A = \{ 1 \}$, $B = \{ 1, 2 \}$, and $C = \{ 1 \}$. Let $f(1) = 2$, $g(1) = 1$, and $g(2) = 1$. Then $g \circ f$ only contains one pair, $(1, 1)$, and is thus 1-1. $f$ is a function from $A \to B$ because its domain is equal to $A$ and it only contains one pair $(1, 2)$. However, $g$ is not 1-1 because $1$ in $C$ is mapped by $g$ from several preimages in $B$. Thus the proposition is false. \sig
+}
+
+
+
+\entry{Proposition 5.28}
+{If $g \circ f : A \to C$ is 1-1, $f : A \to B$, and $g : B \to C$, then $f : A \to B$ is 1-1.}
+{
+\underline{Proof:} Suppose $g \circ f : A \to C$ is 1-1, $f : A \to B$, and $g : B \to C$. Let $f(x) = y$ and $f(z) = y$. Since $g$ is a function from $B$ to $C$, there must exist some $w$ in $C$ such that $(y, w) \in g$. Thus $(x, w)$ and $(z, w)$ are both elements of $g \circ f$. Since $g \circ f$ is by supposition 1-1, $x = z$. Since $f(x) = y$ and $f(z) = y \implies x = z$, $f$ is 1-1. \sig
+}
+
+
+
+\entry{Theorem 5.29}
+{Let $f : A \to B$. Then $f^{-1} : Ran(f) \to A$ if and only if $f$ is 1-1.}
+{
+\underline{Proof:}
+\begin{enumerate}[(a)]
+\item
+\underline{Claim:} $f^{-1} : Ran(f) \to A \implies f$ is 1-1.
+Suppose $f^{-1} : Ran(f)$. Let $f(x) = y$ and $f(z) = y$. Thus $(y, x)$ and $(y, z)$ are in $f^{-1}$. Since $f^{-1} : Ran(f)$, $x = z$. Since $f(x) = y$ and $f(z) = y \implies x = z$, $f$ is 1-1.
+\item
+\underline{Claim:} $f$ is 1-1 $\implies f^{-1} : Ran(f) \to A$.
+Suppose $f$ is 1-1.
+   \begin{enumerate}[(i)]
+   \item
+   $Dom(f^{-1}) = Ran(f)$ by Theorem 4.15a.
+   \item
+   Let $f(x) = y$ and $f(x) = z$. Thus $(y, x)$ and $(z, x)$ are in $f^{-1}$. Since $f^{-1}$ is 1-1 by supposition, $y = z$.
+   \end{enumerate}
+   By meeting the criteria in Definition 5.1, $f^{-1} : Ran(f) \to A$.
+\end{enumerate}
+Proving each direction, the biconditional is true. \sig
+}
+
+
+
+\entry{Exercise 5.33}
+{Show that $f : \reals \to \reals$ given by $f(x) = \cos(x)$ is not onto.}
+{$\cos(x)$ is by definition the ratio between the adjacent leg and hypotnuse of a right triangle. Since the hypotnuse of a right triangle is by definition the largest side, the ratio cannot be greater than one. Thus any element of the reals greater than one is not in the range, so the function is not onto. \sig}
+
+
+
+\entry{Exercise 5.34}
+{Find a codomain $B \subset \reals$ such that the function $f : \reals \to B$ given by $f(x) = \cos(x)$ is onto.}
+{
+$[-1, 1]$. \sig
+}
+
+
+
+\entry{Proposition 5.35}
+{If $f : A \to B$ and $g : B \to C$ are both onto, then $g \circ f : A \to C$ is onto.}
+{
+\underline{Proof:} Suppose $f : A \to B$ and $g : B \to C$ are both onto. 
+
+Let $z \in Ran(g \circ f)$. Then $\exists x \in A : (x, z) \in g \circ f$. Thus $\exists y \in B : (x, y) \in f$ and $(y, z) \in g$. Since $(y, z) \in g$ and $g$ is onto, $z$ must be in $C$. Thus $Ran(g \circ f) \subseteq C$.
+
+Showing $C \subseteq Ran(g \circ f)$ is similar. Since the range of $g \circ f = C$, $g \circ f$ is onto. \sig
+}
+
+
+
+\entry{Proposition 5.36}
+{If $g \circ f : A \to C$ is onto, $f : A \to B$ and $g : B \to C$, then $g : B \to C$ is onto.}
+{
+\underline{Proof:} Suppose $g \circ f : A \to C$ is onto, $f : A \to B$ and $g : B \to C$. Let $z \in Ran(g)$. Then $\exists x \in A : (x, z) \in g \circ f$. Since $g \circ f$ is by supposition onto, $z \in C$. Thus $Ran(g \circ f) \subseteq C$.
+
+Now let $z \in C$. Since $g \circ f$ is by supposition onto, $\exists x \in A : (x, z) \in g \circ f$. Thus $z \in Ran(g \circ f)$, so $C \subseteq g \circ f$. 
+
+Since $C$ and $g \circ f$ are subsets of eachother, they are equal. Thus $g \circ f$ is onto. \sig
+}
+
+
+
+\entry{Proposition 5.37}
+{If $g \circ f : A \to C$ is onto, $f : A \to B$ and $g : B \to C$, then $f : A \to B$ is onto.}
+{
+\underline{Disproof:} Let $A = \{ 1 \}, B = \{ 1, 2 \}, C = \{ 1 \}$. Let $f = \{ (1, 1) \}, g = \{ (1, 1), (2, 1) \}$. Then $g \circ f = \{ (1, 1) \}$, which is onto. $f$ and $g$ are both functions, but $f$ is not onto because $2 \in B$ but $2 \not\in Ran(f)$. \sig
+}
+
+
+
+\entry{Exercise 5.38}
+{Exhibit a specific function $f : \reals \to \reals$ that is 1-1, but not onto.}
+{
+$f(x) = e^x$. \sig
+}
+
+
+
+\entry{Exercise 5.39}
+{Exhibit a specific function $f : \reals \to \reals$ that is onto, but not 1-1.}
+{
+$f(x) = x^3 - x$. \sig
+}
+
+
+
+\entry{Exercise 5.40}
+{Exhibit a specific function $f : \reals \to \reals$ that is neither 1-1 nor onto.}
+{
+$f(x) = \sin(x)$. \sig
+}
+
+
+
+\entry{Exercise 5.41}
+{Exhibit a specific function $f : \reals \to \reals$ that both 1-1 and onto.}
+{
+$f(x) = x$. \sig
+}
+
+
+
+\entry{Theorem 5.43}
+{If $f : A \to B$ is a bijection, then $f^{-1} : B \to A$ is a bijection.}
+{
+\underline{Proof:} Suppose $f : A \to B$ is a bijection.
+\begin{enumerate}[(a)]
+\item
+Let $f^{-1}(x) = z$ and $f^{-1}(y) = z$. Then $f(z) = x$ and $f(z) = y$. Since $f$ is a function by supposition, $x = y$. Since $f^{-1}(x) = z$ and $f^{-1}(y) = z \implies x = y$, $f^{-1}$ is 1-1.
+\item
+Let $x \in A$. Since $f$ is a function, $\exists y \in B : (x, y) \in f$. Thus $(y, x) \in f^{-1}$, so $x \in Ran(f^{-1})$. In other words, $A \subseteq Ran(f^{-1})$. Since the codomain of $f^{-1}$ is $A$, $Ran(f^{-1}) \subseteq A$ by definition of range. Since the sets are subsets of each other, $A = Ran(f^{-1})$. Thus $f^{-1}$ is onto.
+\end{enumerate}
+Since $f^{-1}$ is both 1-1 and onto, it is by definition a bijection. \sig
+}
+
+
+
+\entry{Theorem 5.44}
+{Let $f : A \to B$ and $g : B \to A$. Then $g = f^{-1}$ if and only if $g \circ f = I_A$ and $f \circ g = I_B$.}
+{
+\underline{Proof:} Suppose $f : A \to B$ and $g : B \to A$.
+\begin{enumerate}[(a)]
+\item
+Suppose $g = f^{-1}$.
+
+\underline{Claim:} $g \circ f = I_A$.
+
+Let $(a, c) \in g \circ f$. Then $\exists b \in B : (a, b) \in f \land (b, c) \in g$. Since $g = f^{-1}$, $(b, c) \in f^{-1}$, so $(c, b) \in f$. Because $(a, b)$ and $(c, b)$ are both elements of the function $f$, $a = c$. Thus by definition of identity relation, $(a, c) \in I_A$. Since $(a, c) \in g \circ f \implies (a, c) \in I_A$, $g \circ f \subseteq I_A$.
+
+Now let $(a, a) \in I_A$. Because $f : A \to B$, $\exists b \in B : (a, b) \in f$. Thus $\exists$ some $(b, a) \in f^{-1}$. Since $g = f^{-1}$, $(b, a) \in g$. Since $(a, b) \in f \land (b, a) \in g$ for some $b$, $(a, a) \in g \circ f$. Since $(a, a) \in I_A \implies (a, a) \in g \circ f$, $I_A \subseteq g \circ f$.
+
+Since $g \circ f$ and $I_A$ are subsets of each other, they are equal.
+
+\underline{Claim:} $f \circ g = I_B$.
+
+Similar.
+
+\item
+Suppose $g \circ f = I_A$ and $f \circ g = I_B$.
+
+\underline{Claim:} $g = f^{-1}$.
+
+Let $(b, a) \in g$. By definition, $(b, b) \in I_B$. Since $f \circ g = I_B$, $f$ must contain $(a, b)$ to bridge the gap. Since $(a, b) \in f$, $(b, a) \in f^{-1}$. Since $(b, a) \in g \implies (b, a) \in f^{-1}$, $g \subseteq f^{-1}$.
+
+Now let $(b, a) \in f^{-1}$. Then $(a, b) \in f$. Since $(a, a) \in I_A$ and $g \circ f = I_A$, $(b, a)$ must be in $g$ to bridge the gap. Since $(b, a) \in f^{-1} \implies (b, a) \in g$, $f^{-1} \subseteq g$.
+
+Since $g$ and $f^{-1}$ are subsets of each other, they are equal.
+
+\end{enumerate}
+
+Proving each direction, the biconditional is true. \sig
+}
+
+
+
+\entry{Exercise 5.46}
+{
+Let $f : \reals \to \reals$ be given by $f(x) = -2x + 7$. Determine each of the following set images.
+\begin{enumerate}[(i)]
+\item
+$f((-1, 3])$
+\item
+$f(\reals)$
+\item
+$f(\mathbb{Z})$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(i)]
+\item
+$[1, 9)$
+\item
+$\reals$
+\item
+$\{ 2k + 1 : k \in \mathbb{Z} \}$ \sig
+\end{enumerate}
+}
+
+
+
+\entry{Exercise 5.50}
+{
+Let $f : \reals \to \reals$ be given by $f(x) = x^2$. Determine the following set images and preimages.
+\begin{enumerate}[(a)]
+\item
+$f(\{ 1, 2, 3 \})$
+\item
+$f([0, 2])$
+\item
+$f^{-1}(\{ 4 \})$
+\item
+$f^{-1}([0, 4))$
+\item
+$f((-3, -2])$.
+\item
+$f^{-1}(f((-3, -2]))$
+\item
+$f^{-1}((-4, 1])$
+\item
+$f(f^{-1}((-4, 1]))$
+\end{enumerate}
+}
+{
+\begin{enumerate}[(a)]
+\item
+$\{ 1, 4, 9 \}$
+\item
+$\{ 0, 4 \}$
+\item
+$\{ -2, 2 \}$
+\item
+$(-2, 2)$
+\item
+$[4, 9]$
+\item
+$[-3, -2] \cup [2, 3]$
+\item
+$[-1, 1]$
+\item
+$[0, 1]$
+\end{enumerate}
+}
+
+
+
+\entry{Theorem 5.51}
+{If $f : A \to B$ and $E \subseteq B$, then $f(f^{-1}(E)) \subseteq E$.}
+{
+\underline{Proof:} Suppose $f : A \to B$ and $E \subseteq B$. Let $y \in f(f^{-1}(E))$. Then $\exists x \in f^{-1}(E) : f(x) = y$. Because $x \in f^{-1}(E)$, $f(x)$ must be in $E$. Thus $y \in E$, so $f(f^{-1}(E)) \subseteq E$. \sig
+}
+
+
+
+\entry{Exercise 5.52}
+{Discover and prove a theorem characterizing when $f(f^{-1}(E)) = E$.}
+{
+\textbf{Theorem.} Let $f : A \to B$ and $E \subseteq B$. The equality $f(f^{-1}(E)) = E$ holds if and only if $E \subseteq Ran(f)$. \underline{Proof:}
+\begin{enumerate}[(a)]
+\item
+\underline{Claim:} $f(f^{-1}(E)) = E \implies E \subseteq Ran(f)$.
+
+Suppose $f(f^{-1}(E)) = E$. Let $y \in E$. Then $\exists x \in f^{-1}(E) : f(x) = y$. Since $f(x) = y$, $y \in Ran(f)$. Thus $E \subseteq Ran(f)$.
+\item
+\underline{Claim:} $E \subseteq Ran(f) \implies f(f^{-1}(E)) = E$.
+
+We know $f(f^{-1}(E)) \subseteq E$ by Theorem 5.51.
+
+Now suppose $E \subseteq Ran(f)$. Let $y \in E$. Since $E \subseteq Ran(f)$, $y \in Ran(f)$ as well. Then $\exists x \in f^{-1}(E) : f(x) = y$. Since $x \in f^{-1}(E)$, $f(x) \in f(f^{-1}(E))$. Thus $y \in f(f^{-1}(E))$, so $E \subseteq f(f^{-1}(E))$.
+
+Since the sets are subsets of each other, $f(f^{-1}(E)) = E$.
+\end{enumerate}
+Therefore both directions of the biconditional are true. \sig
+}
+
+
+
+\entry{Theorem 5.53}
+{If $f : A \to B$ and $D \subseteq A$, then $D \subseteq f^{-1}(f(D))$.}
+{
+\underline{Proof:} Suppose $f : A \to B$ and $D \subseteq A$. Let $x \in D$. Then $f(x) \in f(D)$. Thus $x \in f^{-1}(f(D))$, so $D \subseteq f^{-1}(f(D))$. \sig
+}
+
+
+
+\entry{Exercise 5.54}
+{Discover and prove a sufficient condition for $D = f^{-1}(f(D))$.}
+{
+\textbf{Theorem.} Let $f : A \to B$ and $D \subseteq A$. The equality $D = f^{-1}(f(D))$ holds if $f$ is 1-1. 
+
+\underline{Proof:} Suppose $f$ is 1-1. We know $D \subseteq f^{-1}(f(D))$ from Theorem 5.53. Now let $x \in f^{-1}(f(D))$. Then $f(x) \in f(D)$, which means $x \in D$. So $f^{-1}(f(D)) \subseteq D$.
+
+Since the sets are subsets of each other, $D = f^{-1}(f(D))$. \sig
+}
+
+
+
+\entry{Theorem 5.55}
+{
+Let $f : A \to B$. Let $\{ D_\alpha : \alpha \in \Delta \}$ be a family of subsets of $A$ and let $\{ E_\beta : \beta \in \Gamma \}$ be a family of subsets of $B$.
+\begin{enumerate}[(i)]
+\item
+$f(\bigint{\alpha \in \Delta} D_\alpha) \subseteq \bigint{\alpha \in \Delta} f(D_\alpha)$.
+\item
+$f(\biguni{\alpha \in \Delta} D_\alpha) = \biguni{\alpha \in \Delta} f(D_\alpha)$.
+\item
+$f^{-1}(\bigint{\beta \in \Gamma} E_\beta) = \bigint{\beta \in \Gamma} f^{-1}(E_\beta)$.
+\item
+$f^{-1}(\biguni{\beta \in \Gamma} E_\beta) = \biguni{\beta \in \Gamma} f^{-1}(E_\beta)$.
+\end{enumerate}
+}
+{
+\begin{enumerate}[(i)]
+\item
+\underline{Proof:} Let $y \in f(\bigint{\alpha \in \Delta} D_\alpha)$. Then $\exists x \in \bigint{\alpha \in \Delta} D_\alpha : f(x) = y$. Thus $x$ is in every $D_\alpha$. So $f(x)$ must be in every $f(D_\alpha)$. In other words, $y \in \bigint{\alpha \in \Delta} f(D_\alpha)$, so $f(\bigint{\alpha \in \Delta} D_\alpha) \subseteq \bigint{\alpha \in \Delta} f(D_\alpha)$. \sig
+\item
+
+\item
+
+\item
+
+\end{enumerate}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
